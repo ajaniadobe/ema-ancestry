@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-resource",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-30T13:16:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ancestry.com/",
+    "originPage": "marketing homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "resource-cards",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "3-col grid: each with heading + description + colored CTA",
+    "buttonCount": 3,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "resource link sections",
+      "learn more card grids",
+      "content category navigation"
+    ],
+    "notSuitableFor": [
+      "pricing grids",
+      "image gallery cards",
+      "team member profiles"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-30T13:16:00.000Z"
+  }
+}

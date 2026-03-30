@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.ancestry.com/c/ancestry-family",
+  "path": "c/ancestry-family",
+  "timestamp": "2026-03-30T19:06:53.867Z",
+  "cachedHtml": true,
+  "title": "Family History | Ancestry",
+  "template": "product-landing",
+  "blocks": [
+    "hero-gradient",
+    "steps",
+    "youtube"
+  ]
+}

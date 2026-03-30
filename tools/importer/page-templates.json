@@ -1,0 +1,236 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.ancestry.com/"
+      ],
+      "description": "Marketing homepage with hero, product comparison columns, pricing cards, promotional sections, resource cards, and SEO footer links",
+      "blocks": [
+        {
+          "name": "hero-gradient",
+          "instances": [
+            ".showBAUHero .a250-gradient"
+          ]
+        },
+        {
+          "name": "columns-product",
+          "instances": [
+            ".container-media-08aa36823a"
+          ]
+        },
+        {
+          "name": "card-promo",
+          "instances": [
+            ".container-media-788b206008",
+            ".container-media-4948219488"
+          ]
+        },
+        {
+          "name": "cards-pricing",
+          "instances": [
+            ".container-media-a9324d642c .cmp-item-list__items"
+          ]
+        },
+        {
+          "name": "columns-links",
+          "instances": [
+            ".ancestry-footer"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": ".showBAUHero",
+          "style": null,
+          "blocks": [
+            "hero-gradient"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Promo Banner",
+          "selector": ".container-media-9922a722ac",
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [
+            ".container-media-9922a722ac .text",
+            ".container-media-9922a722ac .button"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Product Comparison + Preserve Promo",
+          "selector": ".container-media-e5c16932c5",
+          "style": null,
+          "blocks": [
+            "columns-product",
+            "card-promo"
+          ],
+          "defaultContent": [
+            ".container-media-e5c16932c5 > .cmp-container__container-content > h2",
+            ".container-media-e5c16932c5 > .cmp-container__container-content > p"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Pricing",
+          "selector": ".container-media-a9324d642c",
+          "style": null,
+          "blocks": [
+            "cards-pricing"
+          ],
+          "defaultContent": [
+            ".container-media-a9324d642c > h2",
+            ".container-media-a9324d642c > p"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Finding Your Roots",
+          "selector": ".container-media-4948219488",
+          "style": null,
+          "blocks": [
+            "card-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Learn More Resources",
+          "selector": ".container-media-908aabbd8b",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".container-media-908aabbd8b > h2",
+            ".container-media-908aabbd8b > p"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "SEO Footer Links",
+          "selector": ".ancestry-footer",
+          "style": "light-gray",
+          "blocks": [
+            "columns-links"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "product-landing",
+      "urls": [
+        "https://www.ancestry.com/c/ancestry-family"
+      ],
+      "description": "Product landing page with hero, tutorial steps, discovery content, video testimonial, and conversion CTA section",
+      "blocks": [
+        {
+          "name": "hero-gradient",
+          "instances": [
+            ".container-media-9dc900d33c .container-media-4456a86b40"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": ".container-media-9dc900d33c",
+          "style": null,
+          "blocks": [
+            "hero-gradient"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Getting Started",
+          "selector": ".container-media-151fc3002f",
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Video Testimonial",
+          "selector": ".container-media-23b466668f",
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "CTA",
+          "selector": ".container-media-ce2beb70f9",
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "content-hub",
+      "urls": [
+        "https://www.ancestry.com/c/discover"
+      ],
+      "description": "Content hub page (Ancestry Academy) with hero, featured story, category carousels, and dual CTA section",
+      "blocks": [],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": ".container-media-53c40d7add",
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "CTA",
+          "selector": ".container-media-ce2beb70f9",
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "learning-directory",
+      "urls": [
+        "https://www.ancestry.com/c/dna-learning-hub"
+      ],
+      "description": "SEO content directory page with hero banner, featured article cards, 3-column categorized link directory with 56+ links, and cross-promotion cards",
+      "blocks": [],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Intro",
+          "selector": ".container-media-e504a12523",
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "DNA Directory",
+          "selector": ".container-media-6957c9614b",
+          "style": "light-gray",
+          "blocks": [],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Going Beyond",
+          "selector": ".container-media-edeae4453a",
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+/* Ancestry Fonts - Suisse Intl (sans) and SangBleu Republic (serif) */
+
+/* ui-sans: Suisse Intl - Regular */
+@font-face {
+  font-family: ui-sans;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("Suisse Intl"),
+    url("https://www.ancestrycdn.com/ui-static/redwood/fonts/suisse-intl-regular-web-s.woff2") format("woff2");
+}
+
+/* ui-sans: Suisse Intl - Italic */
+@font-face {
+  font-family: ui-sans;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("Suisse Intl"),
+    url("https://www.ancestrycdn.com/ui-static/redwood/fonts/suisse-intl-regular-italic-web-s.woff2") format("woff2");
+}
+
+/* ui-sans: Suisse Intl - Semibold */
+@font-face {
+  font-family: ui-sans;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local("Suisse Intl-Semibold"),
+    url("https://www.ancestrycdn.com/ui-static/redwood/fonts/suisse-intl-semi-bold-web-s.woff2") format("woff2");
+}
+
+/* ui-serifed: SangBleu Republic - Medium */
+@font-face {
+  font-family: ui-serifed;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("SangBleu Republic-Medium"),
+    url("https://www.ancestrycdn.com/ui-static/redwood/fonts/sang-bleu-republic-medium-web-s.woff2") format("woff2");
+}
+
+/* ui-serifed: SangBleu Republic - Bold */
+@font-face {
+  font-family: ui-serifed;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local("SangBleu Republic-Bold"),
+    url("https://www.ancestrycdn.com/ui-static/redwood/fonts/sang-bleu-republic-bold-web-s.woff2") format("woff2");
+}
+
+/* Fallback font metrics adjustments */
+@font-face {
+  font-family: ui-sans-fallback;
+  size-adjust: 100.5%;
+  ascent-override: 95%;
+  src: local("Helvetica Neue"), local("Arial");
+}
+
+@font-face {
+  font-family: ui-serifed-fallback;
+  size-adjust: 105%;
+  ascent-override: 90%;
+  src: local("Times New Roman"), local("Times"), local("Georgia");
+}

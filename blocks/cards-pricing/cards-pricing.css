@@ -1,0 +1,107 @@
+/* Cards Pricing - Three-column pricing plan cards */
+.cards-pricing > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.cards-pricing > div > div {
+  background-color: var(--color-text-inverted);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 32px 24px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+}
+
+/* Plan name / tier heading */
+.cards-pricing h3 {
+  font-family: var(--font-family-sans);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 8px;
+}
+
+/* Price display */
+.cards-pricing p:first-of-type {
+  font-family: var(--font-family-serif);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.cards-pricing p {
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin: 0 0 12px;
+}
+
+.cards-pricing a {
+  display: inline-block;
+  background-color: var(--color-button-primary);
+  color: var(--color-text-inverted);
+  border: 1px solid transparent;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  text-decoration: none;
+  text-align: center;
+  min-height: var(--button-min-height-large);
+  transition: var(--button-transition);
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.cards-pricing a:hover {
+  background-color: var(--color-button-primary-hover);
+  text-decoration: none;
+}
+
+/* Feature list */
+.cards-pricing ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  text-align: left;
+}
+
+.cards-pricing ul li {
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: var(--color-text);
+  padding: 8px 0;
+  border-top: 1px solid #e2e0dd;
+}
+
+/* Image within pricing card */
+.cards-pricing img {
+  width: 100%;
+  border-radius: 0;
+}
+
+@media (width >= 900px) {
+  .cards-pricing > div {
+    flex-direction: row;
+    gap: 24px;
+    padding: 0 32px;
+    justify-content: center;
+  }
+
+  .cards-pricing > div > div {
+    flex: 1;
+    max-width: 380px;
+  }
+
+  .cards-pricing p:first-of-type {
+    font-size: 48px;
+  }
+}

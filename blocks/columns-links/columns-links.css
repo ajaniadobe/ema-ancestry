@@ -1,0 +1,87 @@
+/* Columns Links - Footer-style link columns on light background */
+.columns-links-container .columns-links-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.columns-links-container {
+  background-color: #f0eee9;
+}
+
+.columns-links {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.columns-links > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.columns-links > div > div {
+  flex: 1;
+}
+
+.columns-links h2 {
+  font-family: var(--font-family-sans);
+  font-size: 14.5px;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0 0 12px;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.columns-links p {
+  margin: 0 0 8px;
+}
+
+.columns-links a {
+  font-size: 14px;
+  color: #36322d;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.columns-links a:hover {
+  text-decoration: underline;
+  color: var(--color-link);
+}
+
+.columns-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.columns-links ul li {
+  margin: 0 0 4px;
+}
+
+.columns-links ul li a {
+  font-size: 14px;
+  color: #36322d;
+  text-decoration: none;
+}
+
+.columns-links ul li a:hover {
+  text-decoration: underline;
+  color: var(--color-link);
+}
+
+.columns-links img {
+  width: 100%;
+}
+
+@media (width >= 900px) {
+  .columns-links {
+    padding: 48px 32px;
+  }
+
+  .columns-links > div {
+    flex-direction: row;
+    gap: 48px;
+  }
+}

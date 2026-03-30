@@ -1,0 +1,77 @@
+/* Columns Product - Two-column product comparison (Family History vs DNA) */
+.columns-product > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.columns-product > div > div {
+  flex: 1;
+  text-align: center;
+}
+
+.columns-product p:first-child {
+  font-family: var(--font-family-sans);
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.columns-product p {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.columns-product a {
+  display: inline-block;
+  background-color: var(--color-button-primary);
+  color: var(--color-text-inverted);
+  border: 1px solid transparent;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  text-decoration: none;
+  text-align: center;
+  min-height: var(--button-min-height-large);
+  transition: var(--button-transition);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.columns-product a:hover {
+  background-color: var(--color-button-primary-hover);
+  text-decoration: none;
+}
+
+/* Second column gets teal button */
+.columns-product > div > div:last-child a {
+  background-color: var(--color-button-teal);
+}
+
+.columns-product > div > div:last-child a:hover {
+  background-color: var(--color-button-teal-hover);
+}
+
+.columns-product img {
+  width: 100%;
+  border-radius: 0;
+}
+
+@media (width >= 900px) {
+  .columns-product > div {
+    flex-direction: row;
+    gap: 48px;
+    padding: 0 32px;
+  }
+
+  .columns-product > div > div {
+    text-align: left;
+  }
+}

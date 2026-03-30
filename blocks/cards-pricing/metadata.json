@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-pricing",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-30T13:16:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ancestry.com/",
+    "originPage": "marketing homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "pricing-grid",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "3-col grid: each with name + price + feature-checklist + CTA",
+    "buttonCount": 3,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "subscription pricing pages",
+      "plan comparison grids",
+      "product tier displays"
+    ],
+    "notSuitableFor": [
+      "image-heavy card grids",
+      "blog article listings",
+      "team member profiles"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-30T13:16:00.000Z"
+  }
+}

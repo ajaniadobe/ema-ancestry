@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-gradient",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-03-30T13:16:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ancestry.com/",
+    "originPage": "marketing homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "warm-gradient",
+    "density": "spacious",
+    "purpose": "homepage-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background-image + heading + paragraph + CTA + fine-print",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "marketing homepages",
+      "landing pages with gradient backgrounds",
+      "pages with editorial hero photography"
+    ],
+    "notSuitableFor": [
+      "simple text-only heroes",
+      "hero banners without background images",
+      "product detail pages"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-30T13:16:00.000Z"
+  }
+}
