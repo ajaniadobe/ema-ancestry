@@ -1,0 +1,105 @@
+/* Card Promo - Orange promotional banner with image and text */
+.card-promo-container .card-promo-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.card-promo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-accent-orange);
+  color: var(--color-text-inverted);
+  overflow: hidden;
+}
+
+.card-promo > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-promo > div > div {
+  width: 100%;
+}
+
+/* Text content column */
+.card-promo > div > div:first-child {
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.card-promo h3 {
+  font-family: var(--font-family-sans);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-inverted);
+  margin: 0 0 8px;
+}
+
+.card-promo p {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-text-inverted);
+  margin: 0 0 16px;
+}
+
+.card-promo a {
+  display: inline-block;
+  background-color: var(--color-text-inverted);
+  color: var(--color-accent-orange);
+  border: 1px solid transparent;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  text-decoration: none;
+  text-align: center;
+  min-height: var(--button-min-height-large);
+  transition: var(--button-transition);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.card-promo a:hover {
+  background-color: #e8e5e1;
+  text-decoration: none;
+}
+
+/* Image column */
+.card-promo picture {
+  display: block;
+  line-height: 0;
+}
+
+.card-promo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (width >= 900px) {
+  .card-promo > div {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .card-promo > div > div:first-child {
+    flex: 1;
+    text-align: left;
+    padding: 40px 48px;
+  }
+
+  .card-promo > div > div:last-child {
+    flex: 1;
+  }
+
+  .card-promo h3 {
+    font-size: 25px;
+  }
+}

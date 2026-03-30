@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://www.ancestry.com/c/dna-learning-hub",
+  "path": "c/dna-learning-hub",
+  "timestamp": "2026-03-30T19:06:43.639Z",
+  "cachedHtml": true,
+  "title": "AncestryDNA Learning Hub",
+  "template": "learning-directory",
+  "blocks": [
+    "cards-resource",
+    "cards-resource",
+    "cards-resource",
+    "columns-links"
+  ]
+}

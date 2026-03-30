@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-links",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-30T13:16:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ancestry.com/",
+    "originPage": "marketing homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light-gray",
+    "density": "compact",
+    "purpose": "seo-links",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "3-col: each with H2 heading + unordered list of links",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "SEO footer link sections",
+      "categorized link directories",
+      "sitemap-style link columns"
+    ],
+    "notSuitableFor": [
+      "content with images",
+      "product comparison columns",
+      "interactive content layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-30T13:16:00.000Z"
+  }
+}

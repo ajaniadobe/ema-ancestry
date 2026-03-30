@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-product",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-30T13:16:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ancestry.com/",
+    "originPage": "marketing homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "product-comparison",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2-col: each with image + title + description + CTA",
+    "buttonCount": 2,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product comparison sections",
+      "feature comparison layouts",
+      "side-by-side product showcases"
+    ],
+    "notSuitableFor": [
+      "text-only column layouts",
+      "link list columns",
+      "single-column content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-30T13:16:00.000Z"
+  }
+}
