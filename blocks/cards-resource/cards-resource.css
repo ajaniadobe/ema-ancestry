@@ -1,27 +1,109 @@
+/* Cards Resource Block - Ancestry styled resource/article cards */
+
 .cards-resource > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-l);
 }
 
 .cards-resource > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  background-color: var(--color-background-white);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-base);
 }
 
-.cards-resource .cards-resource-card-body {
-  margin: 16px;
+.cards-resource > ul > li:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
 }
 
+/* Card image */
 .cards-resource .cards-resource-card-image {
   line-height: 0;
+  overflow: hidden;
 }
 
 .cards-resource > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+  display: block;
+}
+
+/* Card body */
+.cards-resource .cards-resource-card-body {
+  padding: var(--spacing-l) var(--spacing-l) var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Type label (ARTICLE, VIDEO, DEEPER DIVE) */
+.cards-resource .cards-resource-card-body > p:first-child {
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-s);
+}
+
+/* Title */
+.cards-resource .cards-resource-card-body h3 {
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-m);
+}
+
+.cards-resource .cards-resource-card-body h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cards-resource .cards-resource-card-body h3 a:hover {
+  text-decoration: underline;
+}
+
+/* Description text */
+.cards-resource .cards-resource-card-body > p:not(:first-child, :last-child) {
+  font-size: var(--body-font-size-s);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-s);
+}
+
+/* Time badge (6 MIN READ, 3 MIN WATCH) */
+.cards-resource .cards-resource-card-body > p:last-child {
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-top: auto;
+}
+
+/* When card body has only title (no type label or time) */
+.cards-resource .cards-resource-card-body > h3:first-child {
+  margin-bottom: 0;
+}
+
+/* Responsive - single column on small screens */
+@media (width < 600px) {
+  .cards-resource > ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Desktop - max 3 columns */
+@media (width >= 900px) {
+  .cards-resource > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

@@ -256,8 +256,15 @@ button.button.white:hover {
 /* Sections */
 .section {
   display: block;
+  padding: var(--spacing-xl) 0;
 
   > .default-content {
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+  }
+
+  > .cards-resource-wrapper,
+  > .youtube-wrapper {
     max-width: var(--grid-container-width);
     margin: 0 auto;
   }
@@ -282,6 +289,12 @@ main > .section.light-gray {
   background-color: var(--color-background-footer-links);
   color: var(--color-text);
   padding: 40px 0;
+}
+
+main > .section.warm-beige {
+  background-color: #ebe9dc;
+  color: var(--color-text);
+  padding: var(--spacing-xl) 0;
 }
 
 main > .section.white {

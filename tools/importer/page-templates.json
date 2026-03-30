@@ -133,6 +133,18 @@
           "instances": [
             ".container-media-9dc900d33c .container-media-4456a86b40"
           ]
+        },
+        {
+          "name": "steps",
+          "instances": [
+            ".container-media-151fc3002f section.hide768"
+          ]
+        },
+        {
+          "name": "youtube",
+          "instances": [
+            ".container-media-2bd99ee711 .itemlist"
+          ]
         }
       ],
       "sections": [
@@ -151,22 +163,42 @@
           "name": "Getting Started",
           "selector": ".container-media-151fc3002f",
           "style": null,
-          "blocks": [],
+          "blocks": [
+            "steps"
+          ],
           "defaultContent": []
         },
         {
           "id": "section-3",
-          "name": "Video Testimonial",
-          "selector": ".container-media-23b466668f",
+          "name": "Discovery",
+          "selector": ".container-media-276fd208ba",
           "style": null,
           "blocks": [],
           "defaultContent": []
         },
         {
           "id": "section-4",
-          "name": "CTA",
-          "selector": ".container-media-ce2beb70f9",
+          "name": "Video Testimonial",
+          "selector": ".container-media-2bd99ee711",
           "style": null,
+          "blocks": [
+            "youtube"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Logo Strip",
+          "selector": ".container-media-921724d3e0",
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "CTA",
+          "selector": ".container-media-c8a9807e92",
+          "style": "dark",
           "blocks": [],
           "defaultContent": []
         }
@@ -177,22 +209,129 @@
       "urls": [
         "https://www.ancestry.com/c/discover"
       ],
-      "description": "Content hub page (Ancestry Academy) with hero, featured story, category carousels, and dual CTA section",
-      "blocks": [],
+      "description": "Content hub page (Ancestry Academy) with hero, featured story, 7 category carousels, and dual CTA section",
+      "blocks": [
+        {
+          "name": "cards-carousel",
+          "instances": [
+            "#genealogy101",
+            "#createcarousel",
+            "#factFindingCarousel",
+            "#dnaandyouCarousel",
+            "#ancestryPresentsCarousel",
+            "#customerStoriesCarousel",
+            "#perspectivesCarousel"
+          ]
+        }
+      ],
       "sections": [
         {
           "id": "section-1",
           "name": "Hero",
-          "selector": ".container-media-53c40d7add",
+          "selector": ".container-media-cb2152ed38",
           "style": null,
           "blocks": [],
           "defaultContent": []
         },
         {
           "id": "section-2",
-          "name": "CTA",
-          "selector": ".container-media-ce2beb70f9",
+          "name": "Featured Story",
+          "selector": ".container-media-bd1d2bf61e",
           "style": null,
+          "blocks": [],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Genealogy 101",
+          "selector": ".container-media-69b1732857",
+          "style": null,
+          "blocks": [
+            "cards-carousel"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Create & Connect",
+          "selector": ".container-media-81299151dc",
+          "style": "warm-beige",
+          "blocks": [
+            "cards-carousel"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Last Name Search",
+          "selector": ".container-media-c293712ae2",
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Fact Finding",
+          "selector": ".container-media-f9a224f9aa",
+          "style": null,
+          "blocks": [
+            "cards-carousel"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "DNA & You",
+          "selector": ".container-media-1a683fa285",
+          "style": null,
+          "blocks": [
+            "cards-carousel"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Ancestry Presents",
+          "selector": ".container-media-9be0de11f3",
+          "style": null,
+          "blocks": [
+            "cards-carousel"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9",
+          "name": "Customer Stories",
+          "selector": ".container-media-9f8e496a43",
+          "style": null,
+          "blocks": [
+            "cards-carousel"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-10",
+          "name": "Build Your Tree",
+          "selector": ".container-media-e8ca6d6392",
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": []
+        },
+        {
+          "id": "section-11",
+          "name": "Perspectives",
+          "selector": ".container-media-7f41fcb14f",
+          "style": null,
+          "blocks": [
+            "cards-carousel"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-12",
+          "name": "Dual CTA",
+          "selector": ".container-media-99ec9fcf53",
+          "style": "dark",
           "blocks": [],
           "defaultContent": []
         }
@@ -204,14 +343,30 @@
         "https://www.ancestry.com/c/dna-learning-hub"
       ],
       "description": "SEO content directory page with hero banner, featured article cards, 3-column categorized link directory with 56+ links, and cross-promotion cards",
-      "blocks": [],
+      "blocks": [
+        {
+          "name": "cards-resource",
+          "instances": [
+            ".container-media-e504a12523 .itemlist.equalHeightCons",
+            "#learningHubResources .itemlist"
+          ]
+        },
+        {
+          "name": "columns-links",
+          "instances": [
+            "#learningHubLinkLists .itemlist"
+          ]
+        }
+      ],
       "sections": [
         {
           "id": "section-1",
           "name": "Hero Intro",
           "selector": ".container-media-e504a12523",
           "style": null,
-          "blocks": [],
+          "blocks": [
+            "cards-resource"
+          ],
           "defaultContent": []
         },
         {
@@ -219,7 +374,9 @@
           "name": "DNA Directory",
           "selector": ".container-media-6957c9614b",
           "style": "light-gray",
-          "blocks": [],
+          "blocks": [
+            "columns-links"
+          ],
           "defaultContent": []
         },
         {
@@ -227,7 +384,9 @@
           "name": "Going Beyond",
           "selector": ".container-media-edeae4453a",
           "style": null,
-          "blocks": [],
+          "blocks": [
+            "cards-resource"
+          ],
           "defaultContent": []
         }
       ]

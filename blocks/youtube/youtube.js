@@ -8,14 +8,19 @@ function decorate(el) {
   title="Youtube Video">`;
 }
 
-export default function init(a) {
+export default function init(block) {
+  const a = block.querySelector('a[href]');
+  if (!a) return;
+
+  const url = new URL(a.href);
   const div = document.createElement('div');
   div.className = 'video';
-  const params = new URLSearchParams(a.search);
-  const id = params.get('v') || a.pathname.split('/').pop();
+  const params = new URLSearchParams(url.search);
+  const id = params.get('v') || url.pathname.split('/').pop();
   params.append('rel', '0');
   params.delete('v');
   div.dataset.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?${params.toString()}`;
-  a.parentElement.replaceChild(div, a);
+  block.textContent = '';
+  block.append(div);
   observe(div, decorate);
 }
