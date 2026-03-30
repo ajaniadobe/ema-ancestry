@@ -1,57 +1,85 @@
+/* Ancestry Footer */
 footer {
+  background-color: var(--color-background-footer);
+
   a {
+    color: var(--color-text);
     text-decoration: none;
+    font-size: 13px;
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--color-text);
+    }
   }
 
   .footer-content {
     max-width: var(--grid-container-width);
-    margin: 48px auto;
-    font-size: 14px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) 16px;
   }
 
-  .section-legal ul {
+  .section {
+    padding: 0;
+
+    .default-content {
+      max-width: initial;
+      margin: 0;
+    }
+  }
+
+  /* Links row */
+  .section:first-child ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-m) var(--spacing-xl);
     margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: var(--spacing-l);
+    padding-bottom: var(--spacing-l);
+    border-bottom: 1px solid var(--color-hr);
+  }
+
+  .section:first-child li {
+    margin: 0;
+  }
+
+  /* Legal row */
+  .section-legal ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-s) var(--spacing-l);
+    margin: 0 0 var(--spacing-m);
     padding: 0;
     list-style: none;
   }
 
-  .section-copyright p {
+  .section-legal li {
     margin: 0;
+    font-size: 12px;
   }
 
-  .section {
-    .default-content {
-      max-width: initial;
-      margin: initial;
-    }
+  .section-legal li:not(:first-child)::before {
+    content: "\00B7";
+    margin-right: var(--spacing-s);
+    color: var(--color-text-secondary);
+  }
+
+  .section-legal a {
+    font-size: 12px;
+  }
+
+  /* Copyright */
+  .section-copyright p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--color-text-secondary);
   }
 }
 
 @media (width >= 900px) {
-  footer {
-    margin: 0;
-
-    .section-legal {
-      display: flex;
-      justify-content: end;
-      gap: var(--spacing-xl);
-      margin-bottom: 24px;
-
-      ul {
-        display: flex;
-        justify-content: end;
-        gap: var(--spacing-xl);
-      }
-
-      li {
-        margin: 0;
-      }
-    }
-
-    .section-copyright {
-      display: flex;
-      justify-content: end;
-      gap: var(--spacing-xl);
-    }
+  footer .footer-content {
+    padding: var(--spacing-xl) 0;
   }
 }
