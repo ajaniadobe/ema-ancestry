@@ -1,0 +1,99 @@
+/* Banner Promo - dark promotional banner with image | text | CTA side by side */
+.banner-promo-container .banner-promo-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.banner-promo {
+  text-align: center;
+  padding: 20px 24px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Row: 3 columns side by side */
+.banner-promo > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Column cells */
+.banner-promo > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Col 1: Decorative image */
+.banner-promo > div > div:first-child {
+  flex: 0 0 auto;
+}
+
+/* Col 2: Text */
+.banner-promo > div > div:nth-child(2) {
+  flex: 1 1 auto;
+}
+
+/* Col 3: CTA */
+.banner-promo > div > div:last-child {
+  flex: 0 0 auto;
+}
+
+/* Decorative image (ribbon, badge, etc.) */
+.banner-promo img {
+  max-width: 120px;
+  height: auto;
+  display: block;
+}
+
+/* Text */
+.banner-promo p {
+  color: var(--color-text-inverted);
+  font-size: var(--body-font-size-s);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* CTA link styled as white pill button */
+.banner-promo a {
+  display: inline-block;
+  white-space: nowrap;
+  background-color: var(--color-text-inverted);
+  color: var(--color-text);
+  border: 1px solid transparent;
+  border-radius: var(--button-border-radius);
+  padding: 9px 34px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 30px;
+  transition: var(--button-transition);
+  cursor: pointer;
+}
+
+.banner-promo a:hover {
+  background-color: #e8e8e8;
+  text-decoration: none;
+}
+
+.banner-promo a:active {
+  background-color: #d0d0d0;
+}
+
+.banner-promo a:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+  .banner-promo > div {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
