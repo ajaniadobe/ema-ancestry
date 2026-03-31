@@ -99,10 +99,14 @@
   outline-offset: var(--focus-outline-offset);
 }
 
-/* Mobile: stack vertically */
+/* Mobile: stack vertically, hide decorative image */
 @media (max-width: 768px) {
   .banner-promo > div {
     flex-direction: column;
     gap: 12px;
+  }
+
+  .banner-promo > div > div:first-child {
+    display: none;
   }
 }

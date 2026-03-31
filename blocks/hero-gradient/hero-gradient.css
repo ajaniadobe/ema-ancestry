@@ -1,4 +1,5 @@
-/* Hero Gradient - Ancestry homepage hero with inline authorable image */
+/* Hero Gradient - Ancestry hero with 3 layout variants:
+   default (below) | right | behind */
 .hero-gradient-container .hero-gradient-wrapper {
   max-width: unset;
   padding: 0;
@@ -9,11 +10,6 @@
   text-align: center;
 }
 
-/* No-image fallback - extra bottom padding for visual weight */
-.hero-gradient.no-image {
-  padding-bottom: 60px;
-}
-
 /* Text content row */
 .hero-gradient > div:first-child {
   padding: 40px 24px 24px;
@@ -22,7 +18,7 @@
   align-items: center;
 }
 
-/* Authorable image row */
+/* ===== Default variant: image below text ===== */
 .hero-gradient > div.hero-image {
   position: relative;
   width: 100%;
@@ -41,6 +37,7 @@
   display: block;
 }
 
+/* ===== Typography (shared) ===== */
 .hero-gradient h1 {
   font-family: var(--font-family-serif);
   font-weight: 400;
@@ -59,6 +56,7 @@
   line-height: 1.5;
 }
 
+/* CTA button (shared) */
 .hero-gradient a {
   display: inline-block;
   background-color: var(--color-button-primary);
@@ -100,46 +98,80 @@
   margin-top: 4px;
 }
 
-/* Hero section with device image outside block (ancestry-family pattern) */
-/* Mobile: stacked - text above, device image below, WHM at bottom */
-.section:has(.hero-gradient.no-image) {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-}
-
-.section:has(.hero-gradient.no-image) > .block-content {
-  order: 0;
-}
-
-.section:has(.hero-gradient.no-image) > .default-content {
-  order: 1;
-  max-width: unset;
-}
-
-/* Device image area - mobile stacked */
-.section:has(.hero-gradient.no-image) > .default-content:first-child {
-  background: #dad4c5;
+/* ===== "right" variant: full-height image on mobile ===== */
+.hero-gradient.right > div.hero-image {
+  height: auto;
   overflow: hidden;
-  position: relative;
-  height: 302px;
 }
 
-.section:has(.hero-gradient.no-image) > .default-content:first-child > p {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 767px;
-  margin: 0;
-}
-
-.section:has(.hero-gradient.no-image) > .default-content:first-child img {
-  max-width: none;
+.hero-gradient.right > div.hero-image img {
+  position: static;
   width: 100%;
+  max-width: 100%;
+  transform: none;
+}
+
+/* ===== "behind" variant: image as background ===== */
+.hero-gradient.behind {
+  background: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient.behind .hero-background {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-gradient.behind .hero-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-gradient.behind .hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
+.hero-gradient.behind .hero-foreground {
+  position: relative;
+  z-index: 1;
+  padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-gradient.behind h1,
+.hero-gradient.behind p {
+  color: var(--color-text-inverted);
+}
+
+.hero-gradient.behind a {
+  background-color: var(--color-text-inverted);
+  color: var(--color-text);
+}
+
+.hero-gradient.behind a:hover {
+  background-color: #e8e8e8;
+}
+
+.hero-gradient.behind a:active {
+  background-color: #d0d0d0;
+}
+
+/* Fine print in behind variant */
+.hero-gradient.behind .hero-foreground > div > p:last-child {
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* ===== Responsive: 600px ===== */
 @media (width >= 600px) {
   .hero-gradient h1 {
     font-size: 48px;
@@ -152,16 +184,9 @@
   .hero-gradient > div.hero-image img {
     width: 1400px;
   }
-
-  .section:has(.hero-gradient.no-image) > .default-content:first-child {
-    height: 350px;
-  }
-
-  .section:has(.hero-gradient.no-image) > .default-content:first-child > p {
-    width: 1400px;
-  }
 }
 
+/* ===== Responsive: 900px ===== */
 @media (width >= 900px) {
   .hero-gradient > div:first-child {
     padding: 60px 32px 32px;
@@ -169,10 +194,6 @@
 
   .hero-gradient h1 {
     font-size: 60px;
-  }
-
-  .hero-gradient.no-image {
-    padding-bottom: 0;
   }
 
   .hero-gradient p {
@@ -187,57 +208,41 @@
     width: 1900px;
   }
 
-  /* Desktop: two-column layout - text left, device image right */
-  .section:has(.hero-gradient.no-image) {
+  /* ===== "right" variant: image right on desktop ===== */
+  .hero-gradient.right {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: linear-gradient(0deg, #dad4c5 0%, var(--color-background) 100%);
-  }
-
-  .section:has(.hero-gradient.no-image) > .block-content {
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
-    align-items: center;
-  }
-
-  .section:has(.hero-gradient.no-image) > .default-content:first-child {
-    grid-column: 2;
-    grid-row: 1;
-    background: transparent;
-    position: static;
-    height: auto;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .section:has(.hero-gradient.no-image) > .default-content:first-child > p {
-    position: static;
-    width: auto;
-    transform: none;
-  }
-
-  .section:has(.hero-gradient.no-image) > .default-content:first-child img {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .hero-gradient.no-image {
-    background: transparent;
     text-align: left;
   }
 
-  .hero-gradient.no-image > div:first-child {
+  .hero-gradient.right > div:first-child {
     align-items: flex-start;
+    justify-content: center;
+    padding: 60px 32px;
   }
 
-  .hero-gradient.no-image h1 {
+  .hero-gradient.right h1 {
     margin: 0 0 16px;
   }
 
-  .hero-gradient.no-image p {
+  .hero-gradient.right p {
     margin: 0 0 16px;
+    max-width: none;
+  }
+
+  .hero-gradient.right > div.hero-image {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .hero-gradient.right > div.hero-image img {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    transform: none;
   }
 }
