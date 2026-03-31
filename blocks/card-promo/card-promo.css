@@ -1,17 +1,12 @@
-/* Card Promo - Orange promotional banner with image and text */
+/* Card Promo - Vertical promotional card with image and text */
 .card-promo-container .card-promo-wrapper {
   max-width: unset;
   padding: 0;
-  overflow: hidden;
 }
 
 .card-promo {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: var(--color-accent-orange);
-  color: var(--color-text-inverted);
-  overflow: hidden;
   max-width: 100vw;
   box-sizing: border-box;
 }
@@ -19,20 +14,24 @@
 .card-promo > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 .card-promo > div > div {
-  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Text content column */
+/* Image column - always on top */
 .card-promo > div > div:first-child {
-  padding: 32px 24px;
-  text-align: center;
+  line-height: 0;
+}
+
+/* Text content column (2nd child after JS decoration moves CTA to end) */
+.card-promo > div > div:nth-child(2) {
+  padding: 32px 24px 32px;
+  text-align: left;
 }
 
 .card-promo h3 {
@@ -40,69 +39,56 @@
   font-size: 25px;
   font-weight: 700;
   line-height: 1.2;
-  color: var(--color-text-inverted);
+  color: var(--color-text);
   margin: 0 0 8px;
 }
 
 .card-promo p {
-  font-size: 16px;
+  font-size: 16.5px;
   line-height: 1.4;
-  color: var(--color-text-inverted);
+  color: var(--color-text);
   margin: 0 0 16px;
 }
 
 .card-promo a {
   display: inline-block;
-  background-color: var(--color-text-inverted);
-  color: var(--color-accent-orange);
+  background-color: var(--color-button-primary);
+  color: var(--color-text-inverted);
   border: 1px solid transparent;
   border-radius: var(--button-border-radius);
-  padding: var(--button-padding-large);
-  font-size: var(--button-font-size);
+  padding: var(--button-padding-larger);
+  font-size: var(--button-font-size-large);
   font-weight: var(--button-font-weight);
   text-decoration: none;
   text-align: center;
-  min-height: var(--button-min-height-large);
+  min-height: var(--button-min-height-larger);
   transition: var(--button-transition);
   cursor: pointer;
   box-sizing: border-box;
 }
 
 .card-promo a:hover {
-  background-color: #e8e5e1;
+  background-color: var(--color-button-primary-hover);
   text-decoration: none;
 }
 
-/* Image column */
-.card-promo picture {
-  display: block;
-  line-height: 0;
+/* CTA container (moved by JS to end of inner div) */
+.card-promo .card-promo-cta-container {
+  text-align: left;
 }
 
 .card-promo img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
 @media (width >= 900px) {
   .card-promo > div {
-    flex-direction: row;
-    align-items: center;
+    padding: 0 32px;
   }
 
-  .card-promo > div > div:first-child {
-    flex: 1;
-    text-align: left;
-    padding: 40px 48px;
-  }
-
-  .card-promo > div > div:last-child {
-    flex: 1;
-  }
-
-  .card-promo h3 {
-    font-size: 25px;
+  .card-promo > div > div:nth-child(2) {
+    padding: 32px 0 40px;
   }
 }

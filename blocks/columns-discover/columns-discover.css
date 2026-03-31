@@ -1,0 +1,101 @@
+/* Columns Discover - 2-column layout: intro text left, discover items right */
+.columns-discover > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: var(--grid-container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.columns-discover > div > div {
+  text-align: left;
+}
+
+/* Left column: intro text */
+.columns-discover > div > div:first-child h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-m);
+}
+
+.columns-discover > div > div:first-child p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0 0 12px;
+}
+
+/* Right column: discover items */
+.columns-discover > div > div:last-child img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  margin-bottom: var(--spacing-m);
+}
+
+.columns-discover > div > div:last-child h3 {
+  font-family: var(--font-family-sans);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin: 0 0 8px;
+}
+
+.columns-discover > div > div:last-child p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  margin: 0 0 12px;
+}
+
+.columns-discover > div > div:last-child a {
+  display: inline-block;
+  background-color: var(--color-button-teal);
+  color: var(--color-text-inverted);
+  border: 1px solid transparent;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  text-decoration: none;
+  text-align: center;
+  transition: var(--button-transition);
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-bottom: var(--spacing-xl);
+}
+
+.columns-discover > div > div:last-child a:hover {
+  background-color: var(--color-button-teal-hover);
+  text-decoration: none;
+}
+
+/* Last link in the column shouldn't have bottom margin */
+.columns-discover > div > div:last-child p:last-child a {
+  margin-bottom: 0;
+}
+
+@media (width >= 900px) {
+  .columns-discover > div {
+    flex-direction: row;
+    gap: 48px;
+    padding: 0 32px;
+    align-items: flex-start;
+  }
+
+  .columns-discover > div > div:first-child {
+    flex: 2;
+    position: sticky;
+    top: 80px;
+  }
+
+  .columns-discover > div > div:last-child {
+    flex: 3;
+  }
+}
