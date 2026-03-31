@@ -337,6 +337,83 @@ main > .section.light-gray {
   padding: 40px 0;
 }
 
+/* Section spacing and width for content sections */
+.section:has(.content-tabs),
+.section:has(.carousel) {
+  --top-bottom-spacing: 30px;
+}
+
+@media (width >= 900px) {
+  .section:has(.content-tabs) > .block-content,
+  .section:has(.carousel) > .block-content {
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+  }
+}
+
+/* YouTube/quote section - centered text */
+.section:has(.youtube) {
+  --top-bottom-spacing: 32px;
+}
+
+.section:has(.youtube) > .default-content {
+  text-align: center;
+}
+
+.section:has(.youtube) > .default-content h2 {
+  font-size: 48px;
+}
+
+/* YouTube/quote section - side-by-side on desktop */
+@media (width >= 900px) {
+  .section:has(.youtube) {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+    padding: 48px 0;
+  }
+
+  .section:has(.youtube) > .block-content {
+    flex: 1;
+    max-width: unset;
+  }
+
+  .section:has(.youtube) > .default-content {
+    flex: 1;
+    text-align: left;
+  }
+
+  .section:has(.youtube) > .default-content h2 {
+    font-size: 40px;
+  }
+}
+
+/* Featured-in section - centered promo banner */
+.section:has(.youtube) + .section {
+  --top-bottom-spacing: 30px;
+  background-color: var(--color-background-white);
+}
+
+.section:has(.youtube) + .section > .default-content {
+  text-align: center;
+  max-width: var(--grid-container-width);
+  margin: 0 auto;
+}
+
+.section:has(.youtube) + .section > .default-content > p:first-child {
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section:has(.youtube) + .section > .default-content > p:last-child img {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+}
+
 main > .section.warm-beige {
   background-color: #ebe9dc;
   color: var(--color-text);
@@ -349,7 +426,43 @@ main > .section.white {
   padding: 40px 0;
 }
 
+/* Hero section with h1 in sections that also have cards-resource */
+.section:has(.cards-resource) > .default-content:has(h1) {
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.section:has(.cards-resource) > .default-content:has(h1) > p:has(img:only-child):has(~ h1) {
+  display: none;
+}
+
+.section:has(.cards-resource) > .default-content:has(h1) h1 {
+  margin-bottom: var(--spacing-m);
+}
+
+.section:has(.cards-resource) > .default-content:has(h1) h2 {
+  font-size: var(--body-font-size-xl);
+  font-weight: 400;
+  font-family: var(--font-family-sans);
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.section:has(.cards-resource) > .default-content:has(h1) h3 {
+  font-size: var(--heading-font-size-l);
+  margin-bottom: var(--spacing-s);
+}
+
+.section:has(.cards-resource) > .default-content:has(h1) > p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-m);
+}
+
 /* "Learn more" section spacing */
+
 
 /* Lists */
 main {
