@@ -7,6 +7,7 @@ import columnsProductParser from './parsers/columns-product.js';
 import cardPromoParser from './parsers/card-promo.js';
 import cardsPricingParser from './parsers/cards-pricing.js';
 import columnsLinksParser from './parsers/columns-links.js';
+import bannerPromoParser from './parsers/banner-promo.js';
 
 // TRANSFORMER IMPORTS
 import cleanupTransformer from './transformers/ancestry-cleanup.js';
@@ -19,6 +20,7 @@ const parsers = {
   'card-promo': cardPromoParser,
   'cards-pricing': cardsPricingParser,
   'columns-links': columnsLinksParser,
+  'banner-promo': bannerPromoParser,
 };
 
 // PAGE TEMPLATE CONFIGURATION
@@ -49,6 +51,10 @@ const PAGE_TEMPLATE = {
       name: 'columns-links',
       instances: ['.ancestry-footer'],
     },
+    {
+      name: 'banner-promo',
+      instances: ['.container-media-9922a722ac .bgDark'],
+    },
   ],
   sections: [
     {
@@ -64,8 +70,8 @@ const PAGE_TEMPLATE = {
       name: 'Promo Banner',
       selector: '.container-media-9922a722ac',
       style: 'dark',
-      blocks: [],
-      defaultContent: ['.container-media-9922a722ac .text', '.container-media-9922a722ac .button'],
+      blocks: ['banner-promo'],
+      defaultContent: [],
     },
     {
       id: 'section-3',
