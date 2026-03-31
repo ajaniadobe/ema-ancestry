@@ -119,6 +119,20 @@
   border-top: 1px solid #e2e0dd;
 }
 
+.cards-pricing .cards-pricing-card-body ul li .included {
+  display: inline-block;
+  background-color: var(--color-accent-green);
+  color: var(--color-text-inverted);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-right: 6px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
 /* Image within pricing card */
 .cards-pricing img {
   width: 100%;

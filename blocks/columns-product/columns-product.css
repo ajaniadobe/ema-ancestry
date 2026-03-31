@@ -1,6 +1,6 @@
 /* Columns Product - Two-column product comparison (Family History vs DNA) */
 
-/* Section-level grid: place columns-product and DNA default content side by side */
+/* Section heading above the block */
 .section:has(.columns-product) {
   text-align: center;
   padding: var(--spacing-xl) 0;
@@ -26,15 +26,7 @@
   margin: 0 auto;
 }
 
-/* Hide the empty second column in columns-product */
-.columns-product > div > div:last-child:empty {
-  display: none;
-}
-
-.columns-product > div > div:first-child {
-  width: 100%;
-}
-
+/* Product columns container */
 .columns-product > div {
   display: flex;
   flex-direction: column;
@@ -49,7 +41,8 @@
   text-align: center;
 }
 
-.columns-product p:first-child {
+/* Product title (first p in each column) */
+.columns-product > div > div > p:first-child {
   font-family: var(--font-family-sans);
   font-size: 25px;
   font-weight: 700;
@@ -57,6 +50,19 @@
   margin-bottom: 8px;
 }
 
+/* Product image (first p when it contains only an image) */
+.columns-product > div > div > p:has(img:only-child) {
+  line-height: 0;
+  margin-bottom: var(--spacing-m);
+}
+
+.columns-product > div > div > p:has(img:only-child) img {
+  max-width: 300px;
+  width: auto;
+  height: auto;
+}
+
+/* Description text */
 .columns-product p {
   font-size: 16px;
   line-height: 1.4;
@@ -64,7 +70,8 @@
   margin-bottom: 16px;
 }
 
-.columns-product a {
+/* Family History button (first column) */
+.columns-product > div > div:first-child a {
   display: inline-block;
   background-color: var(--color-button-primary);
   color: var(--color-text-inverted);
@@ -81,51 +88,13 @@
   box-sizing: border-box;
 }
 
-.columns-product a:hover {
+.columns-product > div > div:first-child a:hover {
   background-color: var(--color-button-primary-hover);
   text-decoration: none;
 }
 
-.columns-product img {
-  width: 100%;
-  border-radius: 0;
-}
-
-/* DNA default content in same section (second default-content block) */
-.section:has(.columns-product) > .default-content:nth-child(3) {
-  max-width: 600px;
-  margin: var(--spacing-xl) auto;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.section:has(.columns-product) > .default-content:nth-child(3) > p:first-child {
-  line-height: 0;
-  margin-bottom: var(--spacing-m);
-}
-
-.section:has(.columns-product) > .default-content:nth-child(3) > p:first-child img {
-  max-width: 300px;
-  width: auto;
-  height: auto;
-}
-
-.section:has(.columns-product) > .default-content:nth-child(3) > p:nth-child(2) {
-  font-family: var(--font-family-sans);
-  font-size: 25px;
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: 8px;
-}
-
-.section:has(.columns-product) > .default-content:nth-child(3) > p:nth-child(3) {
-  font-size: 16px;
-  line-height: 1.4;
-  color: var(--color-text);
-  margin-bottom: 16px;
-}
-
-.section:has(.columns-product) > .default-content:nth-child(3) > p:last-child a {
+/* DNA button (second column - teal) */
+.columns-product > div > div:last-child a {
   display: inline-block;
   background-color: var(--color-button-teal);
   color: var(--color-text-inverted);
@@ -139,55 +108,32 @@
   min-height: var(--button-min-height-large);
   transition: var(--button-transition);
   cursor: pointer;
+  box-sizing: border-box;
 }
 
-.section:has(.columns-product) > .default-content:nth-child(3) > p:last-child a:hover {
+.columns-product > div > div:last-child a:hover {
   background-color: var(--color-button-teal-hover);
   text-decoration: none;
 }
 
+.columns-product img {
+  width: 100%;
+  border-radius: 0;
+}
+
 @media (width >= 900px) {
-  .section:has(.columns-product) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-xxl) 32px;
-  }
-
-  /* Section heading spans full width */
-  .section:has(.columns-product) > .default-content:first-child {
-    grid-column: 1 / -1;
-  }
-
-  /* Columns-product block takes left column */
-  .section:has(.columns-product) > .block-content:nth-child(2) {
-    grid-column: 1;
-  }
-
-  /* DNA default-content takes right column */
-  .section:has(.columns-product) > .default-content:nth-child(3) {
-    grid-column: 2;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Card-promo spans full width */
-  .section:has(.columns-product) > .block-content:last-child {
-    grid-column: 1 / -1;
-    margin-top: var(--spacing-xl);
-  }
-
   .columns-product > div {
-    flex-direction: column;
-    gap: 16px;
-    padding: 0;
+    flex-direction: row;
+    gap: 48px;
+    padding: 0 32px;
   }
 
   .columns-product > div > div {
     text-align: center;
+  }
+
+  /* Card-promo spans full width */
+  .section:has(.columns-product) > .block-content:last-child {
+    margin-top: var(--spacing-xl);
   }
 }
