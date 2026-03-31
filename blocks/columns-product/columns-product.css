@@ -3,7 +3,7 @@
 /* Section heading above the block */
 .section:has(.columns-product) {
   text-align: center;
-  padding: var(--spacing-xl) 0;
+  padding: 40px 0;
 }
 
 .section:has(.columns-product) > .default-content:first-child {
@@ -19,7 +19,7 @@
 }
 
 .section:has(.columns-product) > .default-content:first-child p {
-  font-size: var(--body-font-size-m);
+  font-size: 21.5px;
   line-height: 1.5;
   color: var(--color-text);
   max-width: 700px;
@@ -41,25 +41,25 @@
   text-align: center;
 }
 
-/* Product title (first p in each column) */
-.columns-product > div > div > p:first-child {
-  font-family: var(--font-family-sans);
-  font-size: 25px;
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: 8px;
-}
-
-/* Product image (first p when it contains only an image) */
+/* Product image (p containing only an img) */
 .columns-product > div > div > p:has(img:only-child) {
   line-height: 0;
   margin-bottom: var(--spacing-m);
 }
 
 .columns-product > div > div > p:has(img:only-child) img {
-  max-width: 300px;
-  width: auto;
+  max-width: 500px;
+  width: 100%;
   height: auto;
+}
+
+/* Product title (first text paragraph - after the image) */
+.columns-product > div > div > p:has(img:only-child) + p {
+  font-family: var(--font-family-sans);
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 8px;
 }
 
 /* Description text */
@@ -77,12 +77,12 @@
   color: var(--color-text-inverted);
   border: 1px solid transparent;
   border-radius: var(--button-border-radius);
-  padding: var(--button-padding-large);
-  font-size: var(--button-font-size);
+  padding: var(--button-padding-larger);
+  font-size: var(--button-font-size-large);
   font-weight: var(--button-font-weight);
   text-decoration: none;
   text-align: center;
-  min-height: var(--button-min-height-large);
+  min-height: var(--button-min-height-larger);
   transition: var(--button-transition);
   cursor: pointer;
   box-sizing: border-box;
@@ -100,12 +100,12 @@
   color: var(--color-text-inverted);
   border: 1px solid transparent;
   border-radius: var(--button-border-radius);
-  padding: var(--button-padding-large);
-  font-size: var(--button-font-size);
+  padding: var(--button-padding-larger);
+  font-size: var(--button-font-size-large);
   font-weight: var(--button-font-weight);
   text-decoration: none;
   text-align: center;
-  min-height: var(--button-min-height-large);
+  min-height: var(--button-min-height-larger);
   transition: var(--button-transition);
   cursor: pointer;
   box-sizing: border-box;

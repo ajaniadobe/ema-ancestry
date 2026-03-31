@@ -1,0 +1,80 @@
+/* Columns Discover - 2-column feature grid for Learn More section */
+.columns-discover > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.columns-discover > div > div {
+  text-align: center;
+}
+
+.columns-discover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  margin-bottom: var(--spacing-m);
+}
+
+.columns-discover h3 {
+  font-family: var(--font-family-sans);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin: 0 0 8px;
+}
+
+.columns-discover p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  margin: 0 0 12px;
+}
+
+.columns-discover a {
+  display: inline-block;
+  background-color: var(--color-button-teal);
+  color: var(--color-text-inverted);
+  border: 1px solid transparent;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  text-decoration: none;
+  text-align: center;
+  transition: var(--button-transition);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.columns-discover a:hover {
+  background-color: var(--color-button-teal-hover);
+  text-decoration: none;
+}
+
+/* Hide empty cells */
+.columns-discover > div > div:empty {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .columns-discover > div {
+    flex-direction: row;
+    gap: 40px;
+    padding: 0 32px;
+  }
+
+  .columns-discover > div > div {
+    flex: 1;
+  }
+
+  /* Equal height columns */
+  .columns-discover > div > div:empty {
+    display: block;
+  }
+}

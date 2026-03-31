@@ -43,7 +43,7 @@
 
 .hero-gradient h1 {
   font-family: var(--font-family-serif);
-  font-weight: 700;
+  font-weight: 400;
   font-size: 34px;
   line-height: 1.2;
   color: var(--color-text);
@@ -101,11 +101,6 @@
 }
 
 @media (width >= 600px) {
-  .hero-gradient h1 {
-    font-size: 48px;
-    line-height: 1.2;
-  }
-
   .hero-gradient > div.hero-image {
     height: 350px;
   }
@@ -122,11 +117,6 @@
 
   .hero-gradient.no-image {
     padding-bottom: 80px;
-  }
-
-  .hero-gradient h1 {
-    font-size: 60px;
-    line-height: 1.2;
   }
 
   .hero-gradient p {

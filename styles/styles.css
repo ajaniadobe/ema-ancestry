@@ -349,9 +349,12 @@ main > .section.white {
   padding: 40px 0;
 }
 
-/* "Learn more" section - grid layout for image/text cards */
+/* "Learn more" section - heading and description */
 .section:has(.columns-links) > .default-content {
+  text-align: center;
   padding: 0 24px;
+  max-width: var(--grid-container-width);
+  margin: 0 auto var(--spacing-xl);
 }
 
 .section:has(.columns-links) > .default-content > h2 {
@@ -364,67 +367,10 @@ main > .section.white {
 
 .section:has(.columns-links) > .default-content > h2 + p,
 .section:has(.columns-links) > .default-content > h2 + p + p {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-l);
   line-height: 1.5;
   color: var(--color-text);
   margin-bottom: var(--spacing-m);
-}
-
-.section:has(.columns-links) > .default-content h3 {
-  font-family: var(--font-family-sans);
-  font-size: var(--heading-font-size-m);
-  font-weight: 700;
-  color: var(--color-text);
-  margin: var(--spacing-m) 0 var(--spacing-s);
-}
-
-.section:has(.columns-links) > .default-content > p:has(img) {
-  line-height: 0;
-  margin-bottom: 0;
-}
-
-.section:has(.columns-links) > .default-content > p:has(img) img {
-  border-radius: 10px;
-}
-
-.section:has(.columns-links) > .default-content > p:has(a:only-child) a {
-  color: var(--color-link);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.section:has(.columns-links) > .default-content > p:has(a:only-child) a:hover {
-  text-decoration: underline;
-}
-
-@media (width >= 900px) {
-  .section:has(.columns-links) > .default-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-flow: dense;
-    gap: 0 32px;
-    padding: 0 32px;
-  }
-
-  /* Intro items span full width */
-  .section:has(.columns-links) > .default-content > :nth-child(-n+3) {
-    grid-column: 1 / -1;
-  }
-
-  /* Card 1: items 4-7 → column 1 */
-  .section:has(.columns-links) > .default-content > :nth-child(n+4):nth-child(-n+7) {
-    grid-column: 1;
-  }
-
-  /* Card 2: items 8-12 → column 2 */
-  .section:has(.columns-links) > .default-content > :nth-child(n+8):nth-child(-n+12) {
-    grid-column: 2;
-  }
-
-  /* Card 3: items 13-16 → column 3 */
-  .section:has(.columns-links) > .default-content > :nth-child(n+13):nth-child(-n+16) {
-    grid-column: 3;
-  }
 }
 
 /* Lists */
@@ -529,7 +475,7 @@ hr {
     --body-font-size-xl: 20px;
   }
 
-  h1 { font-size: 60px; }
+  h1 { font-size: var(--heading-font-size-xl); }
 }
 
 @media (width >= 1440px) {

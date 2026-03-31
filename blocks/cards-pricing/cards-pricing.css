@@ -86,12 +86,12 @@
   color: var(--color-text-inverted);
   border: 1px solid transparent;
   border-radius: var(--button-border-radius);
-  padding: var(--button-padding-large);
-  font-size: var(--button-font-size);
+  padding: var(--button-padding-larger);
+  font-size: var(--button-font-size-large);
   font-weight: var(--button-font-weight);
   text-decoration: none;
   text-align: center;
-  min-height: var(--button-min-height-large);
+  min-height: var(--button-min-height-larger);
   transition: var(--button-transition);
   cursor: pointer;
   box-sizing: border-box;
