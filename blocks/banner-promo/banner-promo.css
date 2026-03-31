@@ -37,6 +37,7 @@
 /* Col 2: Text */
 .banner-promo > div > div:nth-child(2) {
   flex: 1 1 auto;
+  flex-direction: column;
 }
 
 /* Col 3: CTA */
@@ -49,6 +50,14 @@
   max-width: 120px;
   height: auto;
   display: block;
+}
+
+/* Headings */
+.banner-promo h2 {
+  color: var(--color-text-inverted);
+  font-size: var(--heading-font-size-l);
+  line-height: 1.3;
+  margin: 0 0 4px;
 }
 
 /* Text */
@@ -90,10 +99,14 @@
   outline-offset: var(--focus-outline-offset);
 }
 
-/* Mobile: stack vertically */
+/* Mobile: stack vertically, hide decorative image */
 @media (max-width: 768px) {
   .banner-promo > div {
     flex-direction: column;
     gap: 12px;
+  }
+
+  .banner-promo > div > div:first-child {
+    display: none;
   }
 }
