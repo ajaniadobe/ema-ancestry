@@ -349,7 +349,88 @@ main > .section.white {
   padding: 40px 0;
 }
 
+/* Hero section with h1 in sections that also have cards-resource */
+.section:has(.cards-resource) > .default-content:has(h1) {
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.section:has(.cards-resource) > .default-content:has(h1) > p:has(img:only-child):has(~ h1) {
+  display: none;
+}
+
+.section:has(.cards-resource) > .default-content:has(h1) h1 {
+  margin-bottom: var(--spacing-m);
+}
+
+.section:has(.cards-resource) > .default-content:has(h1) h2 {
+  font-size: var(--body-font-size-xl);
+  font-weight: 400;
+  font-family: var(--font-family-sans);
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.section:has(.cards-resource) > .default-content:has(h1) h3 {
+  font-size: var(--heading-font-size-l);
+  margin-bottom: var(--spacing-s);
+}
+
+.section:has(.cards-resource) > .default-content:has(h1) > p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-m);
+}
+
 /* "Learn more" section spacing */
+
+/* Discover carousel - horizontal scrollable image list */
+.default-content > ul:has(> li > p > img) {
+  display: flex;
+  gap: var(--spacing-l);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--spacing-xl) 0;
+}
+
+.default-content > ul:has(> li > p > img) > li {
+  flex: 0 0 250px;
+  scroll-snap-align: start;
+  text-align: center;
+  margin: 0;
+}
+
+/* Hide duplicate image (second p with img in each li) */
+.default-content > ul > li > p:nth-child(2):has(img) {
+  display: none;
+}
+
+.default-content > ul:has(> li > p > img) > li img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.default-content > ul:has(> li > p > img) > li > p:last-child {
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: var(--spacing-m);
+}
+
+@media (width >= 900px) {
+  .default-content > ul:has(> li > p > img) {
+    justify-content: center;
+    overflow-x: visible;
+  }
+
+  .default-content > ul:has(> li > p > img) > li {
+    flex: 0 0 180px;
+  }
+}
 
 /* Lists */
 main {
