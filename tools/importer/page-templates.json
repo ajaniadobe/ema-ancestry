@@ -124,7 +124,8 @@
     {
       "name": "product-landing",
       "urls": [
-        "https://www.ancestry.com/c/ancestry-family"
+        "https://www.ancestry.com/c/ancestry-family",
+        "https://www.ancestry.com/c/dna"
       ],
       "description": "Product landing page with hero, tutorial steps, discovery content, video testimonial, and conversion CTA section",
       "blocks": [
