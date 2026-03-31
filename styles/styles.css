@@ -337,6 +337,51 @@ main > .section.light-gray {
   padding: 40px 0;
 }
 
+/* YouTube/quote section - centered text */
+.section:has(.youtube) > .default-content {
+  text-align: center;
+}
+
+.section:has(.youtube) > .default-content h2 {
+  font-size: 48px;
+}
+
+/* YouTube/quote section - side-by-side on desktop */
+@media (width >= 900px) {
+  .section:has(.youtube) {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+    padding: 48px 0;
+  }
+
+  .section:has(.youtube) > .block-content {
+    flex: 1;
+    max-width: unset;
+  }
+
+  .section:has(.youtube) > .default-content {
+    flex: 1;
+    text-align: left;
+  }
+
+  .section:has(.youtube) > .default-content h2 {
+    font-size: 40px;
+  }
+}
+
+/* Featured in section - centered text */
+.section:has(.youtube) + .section > .default-content {
+  text-align: center;
+}
+
+/* Dark section footer CTA - smaller heading */
+main > .section.dark h2 {
+  font-size: var(--heading-font-size-l);
+}
+
 main > .section.warm-beige {
   background-color: #ebe9dc;
   color: var(--color-text);
@@ -386,51 +431,6 @@ main > .section.white {
 
 /* "Learn more" section spacing */
 
-/* Discover carousel - horizontal scrollable image list */
-.default-content > ul:has(> li > p > img) {
-  display: flex;
-  gap: var(--spacing-l);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: var(--spacing-xl) 0;
-}
-
-.default-content > ul:has(> li > p > img) > li {
-  flex: 0 0 250px;
-  scroll-snap-align: start;
-  text-align: center;
-  margin: 0;
-}
-
-/* Hide duplicate image (second p with img in each li) */
-.default-content > ul > li > p:nth-child(2):has(img) {
-  display: none;
-}
-
-.default-content > ul:has(> li > p > img) > li img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
-.default-content > ul:has(> li > p > img) > li > p:last-child {
-  font-size: var(--body-font-size-l);
-  font-weight: 700;
-  line-height: 1.3;
-  margin-top: var(--spacing-m);
-}
-
-@media (width >= 900px) {
-  .default-content > ul:has(> li > p > img) {
-    justify-content: center;
-    overflow-x: visible;
-  }
-
-  .default-content > ul:has(> li > p > img) > li {
-    flex: 0 0 180px;
-  }
-}
 
 /* Lists */
 main {

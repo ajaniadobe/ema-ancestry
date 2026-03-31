@@ -100,12 +100,96 @@
   margin-top: 4px;
 }
 
+/* Hero section with device image outside block (ancestry-family pattern) */
+/* Mobile: stacked - text above, device image below, WHM at bottom */
+.section:has(.hero-gradient.no-image) {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.section:has(.hero-gradient.no-image) > .block-content {
+  order: 0;
+}
+
+.section:has(.hero-gradient.no-image) > .default-content {
+  order: 1;
+  max-width: unset;
+}
+
+/* Device image area - mobile stacked */
+.section:has(.hero-gradient.no-image) > .default-content:first-child {
+  background: #dad4c5;
+  overflow: hidden;
+  position: relative;
+  height: 302px;
+}
+
+.section:has(.hero-gradient.no-image) > .default-content:first-child > p {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 767px;
+  margin: 0;
+}
+
+.section:has(.hero-gradient.no-image) > .default-content:first-child img {
+  max-width: none;
+  width: 100%;
+  display: block;
+}
+
+/* WHM banner - compact dark strip */
+.section:has(.hero-gradient.no-image) > .default-content:last-child {
+  order: 2;
+  background-color: #38362d;
+  color: var(--color-text-inverted);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section:has(.hero-gradient.no-image) > .default-content:last-child > p {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  line-height: 1.4;
+}
+
+.section:has(.hero-gradient.no-image) > .default-content:last-child > p:first-child {
+  flex: 0 0 auto;
+  width: 48px;
+}
+
+.section:has(.hero-gradient.no-image) > .default-content:last-child > p:first-child img {
+  width: 48px;
+}
+
+.section:has(.hero-gradient.no-image) > .default-content:last-child a {
+  color: var(--color-text-inverted);
+}
+
 @media (width >= 600px) {
+  .hero-gradient h1 {
+    font-size: 48px;
+  }
+
   .hero-gradient > div.hero-image {
     height: 350px;
   }
 
   .hero-gradient > div.hero-image img {
+    width: 1400px;
+  }
+
+  .section:has(.hero-gradient.no-image) > .default-content:first-child {
+    height: 350px;
+  }
+
+  .section:has(.hero-gradient.no-image) > .default-content:first-child > p {
     width: 1400px;
   }
 }
@@ -115,8 +199,12 @@
     padding: 60px 32px 32px;
   }
 
+  .hero-gradient h1 {
+    font-size: 60px;
+  }
+
   .hero-gradient.no-image {
-    padding-bottom: 80px;
+    padding-bottom: 0;
   }
 
   .hero-gradient p {
@@ -129,5 +217,64 @@
 
   .hero-gradient > div.hero-image img {
     width: 1900px;
+  }
+
+  /* Desktop: two-column layout - text left, device image right */
+  .section:has(.hero-gradient.no-image) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(0deg, #dad4c5 0%, var(--color-background) 100%);
+  }
+
+  .section:has(.hero-gradient.no-image) > .block-content {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .section:has(.hero-gradient.no-image) > .default-content:first-child {
+    grid-column: 2;
+    grid-row: 1;
+    background: transparent;
+    position: static;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .section:has(.hero-gradient.no-image) > .default-content:first-child > p {
+    position: static;
+    width: auto;
+    transform: none;
+  }
+
+  .section:has(.hero-gradient.no-image) > .default-content:first-child img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .section:has(.hero-gradient.no-image) > .default-content:last-child {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .hero-gradient.no-image {
+    background: transparent;
+    text-align: left;
+  }
+
+  .hero-gradient.no-image > div:first-child {
+    align-items: flex-start;
+  }
+
+  .hero-gradient.no-image h1 {
+    margin: 0 0 16px;
+  }
+
+  .hero-gradient.no-image p {
+    margin: 0 0 16px;
   }
 }
