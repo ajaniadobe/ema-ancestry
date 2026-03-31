@@ -272,6 +272,42 @@ button.button.white:hover {
 main > .section.dark {
   background-color: #38362d;
   color: var(--color-text-inverted);
+  padding: 16px 0;
+  text-align: center;
+
+  > .default-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  > .default-content p {
+    font-size: var(--body-font-size-s);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Style standalone links as buttons in dark sections */
+  > .default-content p > a:only-child {
+    display: inline-block;
+    background-color: var(--color-text-inverted);
+    color: var(--color-text);
+    border: 1px solid transparent;
+    border-radius: var(--button-border-radius);
+    padding: var(--button-padding);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    text-decoration: none;
+    min-height: var(--button-min-height);
+    line-height: 30px;
+    transition: var(--button-transition);
+  }
+
+  > .default-content p > a:only-child:hover {
+    background-color: #e8e8e8;
+    text-decoration: none;
+  }
 
   a.button:any-link {
     background-color: var(--color-text-inverted);
@@ -280,6 +316,18 @@ main > .section.dark {
 
   a.button:any-link:hover {
     background-color: #e8e8e8;
+  }
+}
+
+@media (width >= 900px) {
+  main > .section.dark {
+    padding: 12px 0;
+
+    > .default-content {
+      flex-direction: row;
+      justify-content: center;
+      gap: 24px;
+    }
   }
 }
 
@@ -299,6 +347,84 @@ main > .section.white {
   background-color: var(--color-background-white);
   color: var(--color-text);
   padding: 40px 0;
+}
+
+/* "Learn more" section - grid layout for image/text cards */
+.section:has(.columns-links) > .default-content {
+  padding: 0 24px;
+}
+
+.section:has(.columns-links) > .default-content > h2 {
+  font-family: var(--font-family-serif);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-m);
+}
+
+.section:has(.columns-links) > .default-content > h2 + p,
+.section:has(.columns-links) > .default-content > h2 + p + p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-m);
+}
+
+.section:has(.columns-links) > .default-content h3 {
+  font-family: var(--font-family-sans);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: var(--spacing-m) 0 var(--spacing-s);
+}
+
+.section:has(.columns-links) > .default-content > p:has(img) {
+  line-height: 0;
+  margin-bottom: 0;
+}
+
+.section:has(.columns-links) > .default-content > p:has(img) img {
+  border-radius: 10px;
+}
+
+.section:has(.columns-links) > .default-content > p:has(a:only-child) a {
+  color: var(--color-link);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.section:has(.columns-links) > .default-content > p:has(a:only-child) a:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .section:has(.columns-links) > .default-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    gap: 0 32px;
+    padding: 0 32px;
+  }
+
+  /* Intro items span full width */
+  .section:has(.columns-links) > .default-content > :nth-child(-n+3) {
+    grid-column: 1 / -1;
+  }
+
+  /* Card 1: items 4-7 → column 1 */
+  .section:has(.columns-links) > .default-content > :nth-child(n+4):nth-child(-n+7) {
+    grid-column: 1;
+  }
+
+  /* Card 2: items 8-12 → column 2 */
+  .section:has(.columns-links) > .default-content > :nth-child(n+8):nth-child(-n+12) {
+    grid-column: 2;
+  }
+
+  /* Card 3: items 13-16 → column 3 */
+  .section:has(.columns-links) > .default-content > :nth-child(n+13):nth-child(-n+16) {
+    grid-column: 3;
+  }
 }
 
 /* Lists */

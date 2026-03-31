@@ -1,4 +1,32 @@
 /* Columns Product - Two-column product comparison (Family History vs DNA) */
+
+/* Section heading above the block */
+.section:has(.columns-product) {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+}
+
+.section:has(.columns-product) > .default-content:first-child {
+  max-width: var(--grid-container-width);
+  margin: 0 auto var(--spacing-xl);
+  padding: 0 24px;
+}
+
+.section:has(.columns-product) > .default-content:first-child h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  margin-bottom: var(--spacing-m);
+}
+
+.section:has(.columns-product) > .default-content:first-child p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  color: var(--color-text);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Product columns container */
 .columns-product > div {
   display: flex;
   flex-direction: column;
@@ -13,7 +41,8 @@
   text-align: center;
 }
 
-.columns-product p:first-child {
+/* Product title (first p in each column) */
+.columns-product > div > div > p:first-child {
   font-family: var(--font-family-sans);
   font-size: 25px;
   font-weight: 700;
@@ -21,6 +50,19 @@
   margin-bottom: 8px;
 }
 
+/* Product image (first p when it contains only an image) */
+.columns-product > div > div > p:has(img:only-child) {
+  line-height: 0;
+  margin-bottom: var(--spacing-m);
+}
+
+.columns-product > div > div > p:has(img:only-child) img {
+  max-width: 300px;
+  width: auto;
+  height: auto;
+}
+
+/* Description text */
 .columns-product p {
   font-size: 16px;
   line-height: 1.4;
@@ -28,7 +70,8 @@
   margin-bottom: 16px;
 }
 
-.columns-product a {
+/* Family History button (first column) */
+.columns-product > div > div:first-child a {
   display: inline-block;
   background-color: var(--color-button-primary);
   color: var(--color-text-inverted);
@@ -45,18 +88,32 @@
   box-sizing: border-box;
 }
 
-.columns-product a:hover {
+.columns-product > div > div:first-child a:hover {
   background-color: var(--color-button-primary-hover);
   text-decoration: none;
 }
 
-/* Second column gets teal button */
+/* DNA button (second column - teal) */
 .columns-product > div > div:last-child a {
+  display: inline-block;
   background-color: var(--color-button-teal);
+  color: var(--color-text-inverted);
+  border: 1px solid transparent;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  text-decoration: none;
+  text-align: center;
+  min-height: var(--button-min-height-large);
+  transition: var(--button-transition);
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
 .columns-product > div > div:last-child a:hover {
   background-color: var(--color-button-teal-hover);
+  text-decoration: none;
 }
 
 .columns-product img {
@@ -72,6 +129,11 @@
   }
 
   .columns-product > div > div {
-    text-align: left;
+    text-align: center;
+  }
+
+  /* Card-promo spans full width */
+  .section:has(.columns-product) > .block-content:last-child {
+    margin-top: var(--spacing-xl);
   }
 }
