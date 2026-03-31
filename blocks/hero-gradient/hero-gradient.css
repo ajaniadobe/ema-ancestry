@@ -140,38 +140,6 @@
   display: block;
 }
 
-/* WHM banner - compact dark strip */
-.section:has(.hero-gradient.no-image) > .default-content:last-child {
-  order: 2;
-  background-color: #38362d;
-  color: var(--color-text-inverted);
-  padding: 12px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.section:has(.hero-gradient.no-image) > .default-content:last-child > p {
-  margin: 0;
-  font-size: var(--body-font-size-s);
-  line-height: 1.4;
-}
-
-.section:has(.hero-gradient.no-image) > .default-content:last-child > p:first-child {
-  flex: 0 0 auto;
-  width: 48px;
-}
-
-.section:has(.hero-gradient.no-image) > .default-content:last-child > p:first-child img {
-  width: 48px;
-}
-
-.section:has(.hero-gradient.no-image) > .default-content:last-child a {
-  color: var(--color-text-inverted);
-}
-
 @media (width >= 600px) {
   .hero-gradient h1 {
     font-size: 48px;
@@ -254,11 +222,6 @@
   .section:has(.hero-gradient.no-image) > .default-content:first-child img {
     width: 100%;
     max-width: 100%;
-  }
-
-  .section:has(.hero-gradient.no-image) > .default-content:last-child {
-    grid-column: 1 / -1;
-    grid-row: 2;
   }
 
   .hero-gradient.no-image {

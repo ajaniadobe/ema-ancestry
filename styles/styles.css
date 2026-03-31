@@ -337,7 +337,25 @@ main > .section.light-gray {
   padding: 40px 0;
 }
 
+/* Section spacing and width for content sections */
+.section:has(.content-tabs),
+.section:has(.carousel) {
+  --top-bottom-spacing: 30px;
+}
+
+@media (width >= 900px) {
+  .section:has(.content-tabs) > .block-content,
+  .section:has(.carousel) > .block-content {
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+  }
+}
+
 /* YouTube/quote section - centered text */
+.section:has(.youtube) {
+  --top-bottom-spacing: 32px;
+}
+
 .section:has(.youtube) > .default-content {
   text-align: center;
 }
@@ -372,14 +390,28 @@ main > .section.light-gray {
   }
 }
 
-/* Featured in section - centered text */
-.section:has(.youtube) + .section > .default-content {
-  text-align: center;
+/* Featured-in section - centered promo banner */
+.section:has(.youtube) + .section {
+  --top-bottom-spacing: 30px;
+  background-color: var(--color-background-white);
 }
 
-/* Dark section footer CTA - smaller heading */
-main > .section.dark h2 {
-  font-size: var(--heading-font-size-l);
+.section:has(.youtube) + .section > .default-content {
+  text-align: center;
+  max-width: var(--grid-container-width);
+  margin: 0 auto;
+}
+
+.section:has(.youtube) + .section > .default-content > p:first-child {
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section:has(.youtube) + .section > .default-content > p:last-child img {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
 }
 
 main > .section.warm-beige {
