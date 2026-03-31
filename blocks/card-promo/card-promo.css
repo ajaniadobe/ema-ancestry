@@ -14,14 +14,13 @@
 .card-promo > div {
   display: flex;
   flex-direction: column;
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .card-promo > div > div {
-  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Image column - always on top */
@@ -29,9 +28,9 @@
   line-height: 0;
 }
 
-/* Text content column */
-.card-promo > div > div:last-child {
-  padding: 24px 24px 32px;
+/* Text content column (2nd child after JS decoration moves CTA to end) */
+.card-promo > div > div:nth-child(2) {
+  padding: 32px 24px 32px;
   text-align: left;
 }
 
@@ -84,7 +83,7 @@
     padding: 0 32px;
   }
 
-  .card-promo > div > div:last-child {
+  .card-promo > div > div:nth-child(2) {
     padding: 32px 0 40px;
   }
 }
