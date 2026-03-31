@@ -72,6 +72,11 @@
   text-decoration: none;
 }
 
+/* CTA container (moved by JS to end of inner div) */
+.card-promo .card-promo-cta-container {
+  text-align: left;
+}
+
 .card-promo img {
   width: 100%;
   height: auto;

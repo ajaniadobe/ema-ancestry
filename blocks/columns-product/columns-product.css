@@ -2,7 +2,7 @@
 
 /* Section heading above the block */
 .section:has(.columns-product) {
-  text-align: center;
+  text-align: left;
   padding: 40px 0;
 }
 
@@ -23,7 +23,7 @@
   line-height: 1.5;
   color: var(--color-text);
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* Product columns container */
@@ -38,7 +38,7 @@
 
 .columns-product > div > div {
   flex: 1;
-  text-align: center;
+  text-align: left;
 }
 
 /* Product image (p containing only an img) */
@@ -129,7 +129,11 @@
   }
 
   .columns-product > div > div {
-    text-align: center;
+    text-align: left;
+  }
+
+  .columns-product {
+    margin-bottom: var(--spacing-xl);
   }
 
   /* Card-promo spans full width */
