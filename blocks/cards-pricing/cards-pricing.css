@@ -1,5 +1,25 @@
 /* Cards Pricing - Three-column pricing plan cards */
-.cards-pricing > div {
+
+/* Section heading above pricing cards */
+.section:has(.cards-pricing) > .default-content {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.section:has(.cards-pricing) > .default-content h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  margin-bottom: var(--spacing-m);
+}
+
+.section:has(.cards-pricing) > .default-content p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.cards-pricing > ul {
+  list-style: none;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -8,7 +28,7 @@
   padding: 0 24px;
 }
 
-.cards-pricing > div > div {
+.cards-pricing > ul > li {
   background-color: var(--color-text-inverted);
   border-radius: 10px;
   overflow: hidden;
@@ -17,32 +37,49 @@
   box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 }
 
-/* Plan name / tier heading */
-.cards-pricing h3 {
+/* Plan name (first p in card body) */
+.cards-pricing .cards-pricing-card-body > p:first-child {
   font-family: var(--font-family-sans);
   font-size: 20px;
   font-weight: 700;
   color: var(--color-text);
-  margin: 0 0 8px;
+  margin: 0 0 4px;
 }
 
-/* Price display */
-.cards-pricing p:first-of-type {
+/* "From" label (second p) */
+.cards-pricing .cards-pricing-card-body > p:nth-child(2) {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Price display (third p with sup elements) */
+.cards-pricing .cards-pricing-card-body > p:nth-child(3) {
   font-family: var(--font-family-serif);
   font-size: 34px;
   font-weight: 700;
   color: var(--color-text);
-  margin: 0 0 4px;
+  margin: 0 0 12px;
   line-height: 1.2;
 }
 
-.cards-pricing p {
+.cards-pricing .cards-pricing-card-body > p:nth-child(3) sup {
+  font-size: 16px;
+  vertical-align: super;
+}
+
+/* Description and general paragraphs */
+.cards-pricing .cards-pricing-card-body > p {
   font-size: 14.5px;
   line-height: 1.4;
   color: var(--color-text);
   margin: 0 0 12px;
 }
 
+/* CTA button */
 .cards-pricing a {
   display: inline-block;
   background-color: var(--color-button-primary);
@@ -67,14 +104,14 @@
 }
 
 /* Feature list */
-.cards-pricing ul {
+.cards-pricing .cards-pricing-card-body ul {
   list-style: none;
   padding: 0;
-  margin: 16px 0 0;
+  margin: 16px 0;
   text-align: left;
 }
 
-.cards-pricing ul li {
+.cards-pricing .cards-pricing-card-body ul li {
   font-size: 14.5px;
   line-height: 1.4;
   color: var(--color-text);
@@ -89,19 +126,23 @@
 }
 
 @media (width >= 900px) {
-  .cards-pricing > div {
+  .cards-pricing > ul {
     flex-direction: row;
     gap: 24px;
     padding: 0 32px;
     justify-content: center;
   }
 
-  .cards-pricing > div > div {
+  .cards-pricing > ul > li {
     flex: 1;
     max-width: 380px;
   }
 
-  .cards-pricing p:first-of-type {
+  .cards-pricing .cards-pricing-card-body > p:nth-child(3) {
     font-size: 48px;
+  }
+
+  .cards-pricing .cards-pricing-card-body > p:nth-child(3) sup {
+    font-size: 20px;
   }
 }
