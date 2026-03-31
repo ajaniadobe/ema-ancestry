@@ -1,4 +1,5 @@
-/* Hero Gradient - Ancestry homepage hero with inline authorable image */
+/* Hero Gradient - Ancestry hero with 3 layout variants:
+   default (below) | right | behind */
 .hero-gradient-container .hero-gradient-wrapper {
   max-width: unset;
   padding: 0;
@@ -9,11 +10,6 @@
   text-align: center;
 }
 
-/* No-image fallback - extra bottom padding for visual weight */
-.hero-gradient.no-image {
-  padding-bottom: 60px;
-}
-
 /* Text content row */
 .hero-gradient > div:first-child {
   padding: 40px 24px 24px;
@@ -22,7 +18,7 @@
   align-items: center;
 }
 
-/* Authorable image row */
+/* ===== Default variant: image below text ===== */
 .hero-gradient > div.hero-image {
   position: relative;
   width: 100%;
@@ -41,6 +37,7 @@
   display: block;
 }
 
+/* ===== Typography (shared) ===== */
 .hero-gradient h1 {
   font-family: var(--font-family-serif);
   font-weight: 400;
@@ -59,6 +56,7 @@
   line-height: 1.5;
 }
 
+/* CTA button (shared) */
 .hero-gradient a {
   display: inline-block;
   background-color: var(--color-button-primary);
@@ -100,7 +98,85 @@
   margin-top: 4px;
 }
 
+/* ===== "right" variant: full-height image on mobile ===== */
+.hero-gradient.right > div.hero-image {
+  height: auto;
+  overflow: hidden;
+}
+
+.hero-gradient.right > div.hero-image img {
+  position: static;
+  width: 100%;
+  max-width: 100%;
+  transform: none;
+}
+
+/* ===== "behind" variant: image as background ===== */
+.hero-gradient.behind {
+  background: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient.behind .hero-background {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-gradient.behind .hero-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-gradient.behind .hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-gradient.behind .hero-foreground {
+  position: relative;
+  z-index: 1;
+  padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-gradient.behind h1,
+.hero-gradient.behind p {
+  color: var(--color-text-inverted);
+}
+
+.hero-gradient.behind a {
+  background-color: var(--color-text-inverted);
+  color: var(--color-text);
+}
+
+.hero-gradient.behind a:hover {
+  background-color: #e8e8e8;
+}
+
+.hero-gradient.behind a:active {
+  background-color: #d0d0d0;
+}
+
+/* Fine print in behind variant */
+.hero-gradient.behind .hero-foreground > div > p:last-child {
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* ===== Responsive: 600px ===== */
 @media (width >= 600px) {
+  .hero-gradient h1 {
+    font-size: 48px;
+  }
+
   .hero-gradient > div.hero-image {
     height: 350px;
   }
@@ -110,13 +186,14 @@
   }
 }
 
+/* ===== Responsive: 900px ===== */
 @media (width >= 900px) {
   .hero-gradient > div:first-child {
     padding: 60px 32px 32px;
   }
 
-  .hero-gradient.no-image {
-    padding-bottom: 80px;
+  .hero-gradient h1 {
+    font-size: 60px;
   }
 
   .hero-gradient p {
@@ -129,5 +206,43 @@
 
   .hero-gradient > div.hero-image img {
     width: 1900px;
+  }
+
+  /* ===== "right" variant: image right on desktop ===== */
+  .hero-gradient.right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+
+  .hero-gradient.right > div:first-child {
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 32px;
+  }
+
+  .hero-gradient.right h1 {
+    margin: 0 0 16px;
+  }
+
+  .hero-gradient.right p {
+    margin: 0 0 16px;
+    max-width: none;
+  }
+
+  .hero-gradient.right > div.hero-image {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .hero-gradient.right > div.hero-image img {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    transform: none;
   }
 }
