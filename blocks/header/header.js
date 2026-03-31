@@ -2,7 +2,7 @@ import { getConfig, getMetadata } from '../../scripts/ak.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 const { locale } = getConfig();
-const HEADER_PATH = '/content/fragments/nav/header';
+const HEADER_PATH = '/fragments/nav/header';
 
 function decorateBrand(section) {
   section.classList.add('header-brand');
