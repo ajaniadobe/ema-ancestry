@@ -1,5 +1,14 @@
 /* Cards Resource Block - Ancestry styled resource/article cards */
 
+/* Section heading above the cards grid */
+.section:has(.cards-resource) > .default-content h2 {
+  font-family: var(--font-family-sans);
+  font-size: var(--heading-font-size-l);
+  font-weight: 400;
+  color: var(--color-link);
+  margin-bottom: var(--spacing-l);
+}
+
 .cards-resource > ul {
   list-style: none;
   margin: 0;
@@ -43,7 +52,7 @@
   flex: 1;
 }
 
-/* Type label (ARTICLE, VIDEO, DEEPER DIVE) */
+/* Type label (ARTICLE, VIDEO, DEEPER DIVE) - only when p is the very first child */
 .cards-resource .cards-resource-card-body > p:first-child {
   font-size: var(--body-font-size-xs);
   font-weight: 700;
@@ -71,7 +80,7 @@
   text-decoration: underline;
 }
 
-/* Description text */
+/* Description text - paragraphs between type label and time badge */
 .cards-resource .cards-resource-card-body > p:not(:first-child, :last-child) {
   font-size: var(--body-font-size-s);
   color: var(--color-text-secondary);
@@ -79,8 +88,21 @@
   margin-bottom: var(--spacing-s);
 }
 
-/* Time badge (6 MIN READ, 3 MIN WATCH) */
-.cards-resource .cards-resource-card-body > p:last-child {
+/* Description text - when h3 is first child, all following p tags are descriptions */
+.cards-resource .cards-resource-card-body > h3:first-child ~ p {
+  font-size: var(--body-font-size-s);
+  color: var(--color-text);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-s);
+}
+
+.cards-resource .cards-resource-card-body > h3:first-child ~ p a {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+/* Time badge (6 MIN READ, 3 MIN WATCH) - only when preceded by type label (p first child) */
+.cards-resource .cards-resource-card-body > p:first-child ~ p:last-child:not(h3 ~ p) {
   font-size: var(--body-font-size-xs);
   font-weight: 700;
   letter-spacing: 0.05em;
