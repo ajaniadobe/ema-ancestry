@@ -349,29 +349,7 @@ main > .section.white {
   padding: 40px 0;
 }
 
-/* "Learn more" section - heading and description */
-.section:has(.columns-links) > .default-content {
-  text-align: center;
-  padding: 0 24px;
-  max-width: var(--grid-container-width);
-  margin: 0 auto var(--spacing-xl);
-}
-
-.section:has(.columns-links) > .default-content > h2 {
-  font-family: var(--font-family-serif);
-  font-size: var(--heading-font-size-xxl);
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: var(--spacing-m);
-}
-
-.section:has(.columns-links) > .default-content > h2 + p,
-.section:has(.columns-links) > .default-content > h2 + p + p {
-  font-size: var(--body-font-size-l);
-  line-height: 1.5;
-  color: var(--color-text);
-  margin-bottom: var(--spacing-m);
-}
+/* "Learn more" section spacing */
 
 /* Lists */
 main {
