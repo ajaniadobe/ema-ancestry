@@ -27,16 +27,62 @@ var CustomImportScript = (() => {
   function parse(element, { document: document2 }) {
     const h1 = element.querySelector("h1");
     if (!h1) return;
-    const heroContent = h1.parentElement;
-    const contentCell = [h1];
-    const paragraphs = Array.from(heroContent.querySelectorAll("p")).filter((p) => !p.closest("a") && p.textContent.trim().length > 0);
-    if (paragraphs[0]) contentCell.push(paragraphs[0]);
-    const cta = heroContent.querySelector("a[href]");
-    if (cta) contentCell.push(cta);
-    for (let i = 1; i < paragraphs.length; i++) {
-      contentCell.push(paragraphs[i]);
+    let bgImageUrl = null;
+    const bgContainer = element.querySelector('[class*="container-media-"]');
+    if (bgContainer) {
+      try {
+        const computedStyle = window.getComputedStyle(bgContainer);
+        const bgImage = computedStyle.backgroundImage;
+        if (bgImage && bgImage !== "none") {
+          const match = bgImage.match(/url\(["']?([^"')]+)["']?\)/);
+          if (match) bgImageUrl = match[1];
+        }
+      } catch (e) {
+      }
     }
-    const cells = [contentCell];
+    if (!bgImageUrl) {
+      const styleEls = element.querySelectorAll("style");
+      for (const styleEl of styleEls) {
+        const text = styleEl.textContent;
+        const matches = [...text.matchAll(/background-image:\s*url\(['"]?([^'")\s]+)['"]?\)/g)];
+        if (matches.length > 0) {
+          bgImageUrl = matches[matches.length - 1][1];
+          break;
+        }
+      }
+    }
+    const contentScope = bgContainer ? bgContainer.querySelector(".cmp-container__container-content") || bgContainer : element;
+    const contentWrapper = document2.createElement("div");
+    contentWrapper.appendChild(h1.cloneNode(true));
+    const paragraphs = Array.from(contentScope.querySelectorAll(".cmp-text p")).filter((p) => !p.closest("a") && p.textContent.trim().length > 0 && !p.classList.contains("show480") && !p.classList.contains("show768"));
+    if (paragraphs[0]) {
+      const p = document2.createElement("p");
+      p.textContent = paragraphs[0].textContent.trim();
+      contentWrapper.appendChild(p);
+    }
+    const cta = contentScope.querySelector(".cmp-button__wrapper a[href]");
+    if (cta) {
+      const p = document2.createElement("p");
+      const a = document2.createElement("a");
+      a.href = cta.href;
+      a.textContent = cta.textContent.trim();
+      p.appendChild(a);
+      contentWrapper.appendChild(p);
+    }
+    for (let i = 1; i < paragraphs.length; i++) {
+      const p = document2.createElement("p");
+      p.textContent = paragraphs[i].textContent.trim();
+      contentWrapper.appendChild(p);
+    }
+    const cells = [];
+    cells.push([contentWrapper]);
+    if (bgImageUrl) {
+      if (bgImageUrl.startsWith("//")) bgImageUrl = "https:" + bgImageUrl;
+      const img = document2.createElement("img");
+      img.src = bgImageUrl;
+      img.alt = "";
+      cells.push([img]);
+    }
     const block = WebImporter.Blocks.createBlock(document2, { name: "hero-gradient", cells });
     element.replaceWith(block);
   }

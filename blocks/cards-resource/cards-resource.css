@@ -1,14 +1,50 @@
 /* Cards Resource Block - Ancestry styled resource/article cards */
 
-/* Section heading above the cards grid */
-.section:has(.cards-resource) > .default-content h2 {
-  font-family: var(--font-family-sans);
-  font-size: var(--heading-font-size-l);
-  font-weight: 400;
-  color: var(--color-link);
-  margin-bottom: var(--spacing-l);
+/* Category header: label + "See all" link in the section's default content */
+.section .default-content + .block-content > .cards-resource,
+.section .default-content:has(+ .block-content > .cards-resource) {
+  /* Ancestor selector for category header styling - see below */
 }
 
+.section:has(.cards-resource) > .default-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--spacing-m);
+}
+
+.section:has(.cards-resource) > .default-content > p:first-child {
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.section:has(.cards-resource) > .default-content > p:last-child {
+  margin: 0;
+}
+
+/* Override button styling on "See all" links */
+.section:has(.cards-resource) > .default-content a {
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  color: var(--color-link);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  min-height: unset;
+  line-height: inherit;
+  border-radius: 0;
+}
+
+.section:has(.cards-resource) > .default-content a:hover {
+  color: var(--color-link-hover);
+  background: none;
+}
+
+/* Card grid */
 .cards-resource > ul {
   list-style: none;
   margin: 0;
@@ -46,13 +82,13 @@
 
 /* Card body */
 .cards-resource .cards-resource-card-body {
-  padding: var(--spacing-l) var(--spacing-l) var(--spacing-xl);
+  padding: 24px 24px 32px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-/* Type label (ARTICLE, VIDEO, DEEPER DIVE) - only when p is the very first child */
+/* Type label (ARTICLE, VIDEO, DEEPER DIVE) - first <p> when followed by h3 */
 .cards-resource .cards-resource-card-body > p:first-child {
   font-size: var(--body-font-size-xs);
   font-weight: 700;
@@ -64,7 +100,7 @@
 
 /* Title */
 .cards-resource .cards-resource-card-body h3 {
-  font-size: var(--body-font-size-m);
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.3;
   color: var(--color-text);
@@ -74,10 +110,19 @@
 .cards-resource .cards-resource-card-body h3 a {
   color: inherit;
   text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  min-height: unset;
+  line-height: inherit;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .cards-resource .cards-resource-card-body h3 a:hover {
   text-decoration: underline;
+  background: none;
 }
 
 /* Description text - paragraphs between type label and time badge */
@@ -99,10 +144,17 @@
 .cards-resource .cards-resource-card-body > h3:first-child ~ p a {
   color: var(--color-link);
   text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  min-height: unset;
+  line-height: inherit;
+  border-radius: 0;
+  font-size: inherit;
 }
 
-/* Time badge (6 MIN READ, 3 MIN WATCH) - only when preceded by type label (p first child) */
-.cards-resource .cards-resource-card-body > p:first-child ~ p:last-child:not(h3 ~ p) {
+/* Time badge (6 MIN READ, 3 MIN WATCH) - last paragraph pushed to bottom */
+.cards-resource .cards-resource-card-body > p:last-child:not(:first-child):not(h3 ~ p:last-child) {
   font-size: var(--body-font-size-xs);
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -127,5 +179,9 @@
 @media (width >= 900px) {
   .cards-resource > ul {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-resource .cards-resource-card-body h3 {
+    font-size: 20px;
   }
 }
