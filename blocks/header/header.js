@@ -40,9 +40,11 @@ function addHamburger(header) {
   const btn = document.createElement('button');
   btn.className = 'header-hamburger';
   btn.setAttribute('aria-label', 'Toggle menu');
+  btn.setAttribute('aria-expanded', 'false');
   btn.innerHTML = '<span></span><span></span><span></span>';
   btn.addEventListener('click', () => {
-    header.classList.toggle('is-open');
+    const open = header.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(open));
   });
   const brand = header.querySelector('.header-brand .default-content');
   if (brand) brand.append(btn);

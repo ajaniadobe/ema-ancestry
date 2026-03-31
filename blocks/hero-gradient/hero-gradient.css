@@ -18,7 +18,7 @@
 
 .hero-gradient h1 {
   font-family: var(--font-family-serif);
-  font-weight: 400;
+  font-weight: 700;
   font-size: 34px;
   line-height: 1.2;
   color: var(--color-text);
@@ -30,7 +30,7 @@
   color: var(--color-text);
   margin: 0 auto 16px;
   max-width: 600px;
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-l);
   line-height: 1.5;
 }
 

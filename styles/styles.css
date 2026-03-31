@@ -72,7 +72,7 @@
 
   /* headings - Ancestry uses serif for h1/h2, sans for h3+ */
   --heading-font-family: var(--font-family-serif);
-  --heading-font-size-xxl: 48px;
+  --heading-font-size-xxl: 34px;
   --heading-font-size-xl: 34px;
   --heading-font-size-l: 25px;
   --heading-font-size-m: 21.5px;
@@ -270,7 +270,7 @@ button.button.white:hover {
 
 /* Section variants */
 main > .section.dark {
-  background-color: var(--color-accent-orange);
+  background-color: #38362d;
   color: var(--color-text-inverted);
 
   a.button:any-link {
@@ -387,6 +387,10 @@ hr {
 
 /* Responsive breakpoints */
 @media (width >= 600px) {
+  :root {
+    --heading-font-size-xxl: 40px;
+  }
+
   h1 { font-size: var(--heading-font-size-xxl); }
 }
 

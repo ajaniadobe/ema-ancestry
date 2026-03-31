@@ -1,4 +1,14 @@
 /* Columns Links - Footer-style link columns on light background */
+
+/* Section heading above the columns */
+.section:has(.columns-links) > .default-content h2 {
+  font-family: var(--font-family-sans);
+  font-size: var(--heading-font-size-l);
+  font-weight: 400;
+  color: var(--color-link);
+  margin-bottom: var(--spacing-l);
+}
+
 .columns-links-container .columns-links-wrapper {
   max-width: unset;
   padding: 0;
@@ -40,7 +50,7 @@
 
 .columns-links a {
   font-size: 14px;
-  color: #36322d;
+  color: var(--color-link);
   text-decoration: none;
   line-height: 1.6;
 }
@@ -62,7 +72,7 @@
 
 .columns-links ul li a {
   font-size: 14px;
-  color: #36322d;
+  color: var(--color-link);
   text-decoration: none;
 }
 
