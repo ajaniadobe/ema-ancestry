@@ -124,7 +124,8 @@
     {
       "name": "product-landing",
       "urls": [
-        "https://www.ancestry.com/c/ancestry-family"
+        "https://www.ancestry.com/c/ancestry-family",
+        "https://www.ancestry.com/c/dna"
       ],
       "description": "Product landing page with hero, tutorial steps, discovery content, video testimonial, and conversion CTA section",
       "blocks": [
@@ -340,9 +341,11 @@
     {
       "name": "learning-directory",
       "urls": [
-        "https://www.ancestry.com/c/dna-learning-hub"
+        "https://www.ancestry.com/c/dna-learning-hub",
+        "https://www.ancestry.com/c/family-history-learning-hub",
+        "https://www.ancestry.com/c/traits-learning-hub"
       ],
-      "description": "SEO content directory page with hero banner, featured article cards, 3-column categorized link directory with 56+ links, and cross-promotion cards",
+      "description": "SEO content directory page with hero banner, featured article cards, multi-column categorized link directory, and cross-promotion cards",
       "blocks": [
         {
           "name": "cards-resource",
@@ -390,6 +393,62 @@
           "defaultContent": []
         }
       ]
+    },
+    {
+      "name": "product-preserve",
+      "urls": [
+        "https://www.ancestry.com/c/ancestrypreserve"
+      ],
+      "description": "Product digitization service page with tabbed hero, pricing, step-by-step process, item category carousel, FAQ accordion, and bottom CTA",
+      "blocks": []
+    },
+    {
+      "name": "entertainment-show",
+      "urls": [
+        "https://www.ancestry.com/c/finding-your-roots"
+      ],
+      "description": "TV show landing page with hero banner, YouTube video embed, episode grid with expandable details, and conversion CTA",
+      "blocks": []
+    },
+    {
+      "name": "product-traits",
+      "urls": [
+        "https://www.ancestry.com/c/traits"
+      ],
+      "description": "DNA traits product page with category carousel, feature benefit sections, what-is-included carousel, trait showcase sections, and FAQ accordion",
+      "blocks": []
+    },
+    {
+      "name": "product-bundle",
+      "urls": [
+        "https://www.ancestry.com/c/dna/bundle"
+      ],
+      "description": "DNA and membership bundle offer page with hero pricing, scrolling feature comparison with images, feature checklist columns, and bottom CTA with legal disclaimers",
+      "blocks": []
+    },
+    {
+      "name": "product-interactive",
+      "urls": [
+        "https://www.ancestry.com/c/story-scout"
+      ],
+      "description": "Interactive product tool page with search form hero, explanatory content, how-it-works steps with video, screenshot carousel, and CTA",
+      "blocks": []
+    },
+    {
+      "name": "events-listing",
+      "urls": [
+        "https://www.ancestry.com/c/discover/education"
+      ],
+      "description": "Virtual events and webinars listing page with breadcrumb navigation, upcoming event cards with registration links, and past event recording grid",
+      "blocks": []
+    },
+    {
+      "name": "content-category",
+      "urls": [
+        "https://www.ancestry.com/c/discover/genealogy-101"
+      ],
+      "description": "Content sub-category page with breadcrumb, article and video content cards, surname search widget, topic carousel, and dual CTA footer",
+      "blocks": []
     }
   ]
 }
