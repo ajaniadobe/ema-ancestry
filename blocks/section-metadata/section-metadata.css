@@ -236,3 +236,82 @@
     grid-template-columns: repeat(var(--grid-size), 1fr);
   }
 }
+
+/*
+ * Style: cards — turns a columns block into contained feature cards
+ * (used by the "science" + "privacy" block on the DNA page).
+ */
+.section.cards {
+  .row {
+    gap: var(--spacing-l);
+    align-items: stretch;
+  }
+
+  .col {
+    padding: var(--spacing-xxl);
+    border-radius: 16px;
+    background-color: var(--color-background-white);
+    text-align: center;
+  }
+
+  .col:last-child {
+    background-color: #ebe9dc;
+  }
+
+  .col :first-child {
+    margin-top: 0;
+  }
+
+  /* standalone link renders as a dark button */
+  .col p > a:only-child {
+    display: inline-block;
+    margin-top: var(--spacing-s);
+    padding: var(--button-padding);
+    min-height: var(--button-min-height);
+    border-radius: var(--button-border-radius);
+    background-color: var(--color-text);
+    color: var(--color-text-inverted);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    line-height: 30px;
+    text-decoration: none;
+  }
+
+  .col p > a:only-child:hover {
+    background-color: #000;
+  }
+}
+
+/*
+ * Style: steps — numbered step cards in a columns block
+ * (used by "Get started in a few simple steps" on the DNA page).
+ */
+.section.steps {
+  .row {
+    gap: var(--spacing-l);
+    align-items: stretch;
+  }
+
+  .col {
+    padding: var(--spacing-xl);
+    border: 1px solid var(--color-hr);
+    border-radius: 16px;
+    background-color: var(--color-background-white);
+    text-align: center;
+  }
+
+  /* first paragraph in each cell is the step number, shown as a badge */
+  .col > p:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--spacing-m);
+    border-radius: 50%;
+    background-color: var(--color-leaf);
+    color: var(--color-text-inverted);
+    font-size: var(--heading-font-size-l);
+    font-weight: 700;
+  }
+}
