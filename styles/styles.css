@@ -426,6 +426,12 @@ main > .section.white {
   padding: 40px 0;
 }
 
+main > .section.mint {
+  background-color: #e6f1ea;
+  color: var(--color-text);
+  padding: var(--spacing-xl) 0;
+}
+
 /* Hero section with h1 in sections that also have cards-resource */
 .section:has(.cards-resource) > .default-content:has(h1) {
   text-align: center;
