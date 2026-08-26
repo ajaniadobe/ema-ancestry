@@ -432,6 +432,22 @@ main > .section.mint {
   padding: var(--spacing-xl) 0;
 }
 
+/* FAQ (accordion) section - white background, centered sans-serif title */
+main > .section:has(.accordion) {
+  background-color: var(--color-background-white);
+}
+
+.section:has(.accordion) > .default-content {
+  text-align: center;
+}
+
+.section:has(.accordion) > .default-content h2 {
+  font-family: var(--font-family-sans);
+  font-size: 29px;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-xl);
+}
+
 /* Hero section with h1 in sections that also have cards-resource */
 .section:has(.cards-resource) > .default-content:has(h1) {
   text-align: center;
