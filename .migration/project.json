@@ -1,4 +1,11 @@
 {
   "type": "da",
-  "contentHostUrl": "https://content.da.live/ajaniadobe/ema-ancestry/"
+  "sites": {
+    "ema-ancestry": {
+      "contentHostUrl": "https://content.da.live/ajaniadobe/ema-ancestry/",
+      "previewOrg": "ajaniadobe",
+      "previewSite": "ema-ancestry",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
 }

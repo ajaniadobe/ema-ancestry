@@ -1,10 +1,16 @@
+/* Accordion — matches ancestry.com FAQ: bottom-divider items, teal questions, no box */
+.accordion {
+  max-width: var(--grid-container-width);
+  margin: 0 auto;
+}
+
 .accordion details {
-  border: 1px solid #dadada;
+  border-bottom: 1px solid #bbb;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 .accordion details + details {
-  margin-top: 24px;
+  margin-top: 0;
 }
 
 .accordion details p {
@@ -13,21 +19,32 @@
 
 .accordion details summary {
   position: relative;
-  padding: 0 16px;
+  padding: 8px;
   padding-right: 46px;
+  color: var(--color-link);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
   cursor: pointer;
   list-style: none;
   overflow: auto;
-  transition: background-color 0.2s;
+  transition: color 0.2s;
 }
 
-.accordion details[open] summary {
-  background-color: var(--light-color);
+.accordion details summary h3,
+.accordion details summary h4 {
+  display: inline;
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  line-height: inherit;
 }
 
 .accordion details summary:focus,
 .accordion details summary:hover {
-  background-color: var(--light-color);
+  color: var(--color-link-hover);
 }
 
 .accordion details summary::-webkit-details-marker {
@@ -37,12 +54,12 @@
 .accordion details summary::after {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 45%;
   right: 18px;
   transform: translateY(-50%) rotate(135deg);
-  width: 6px;
-  height: 6px;
-  border: 2px solid;
+  width: 8px;
+  height: 8px;
+  border: solid var(--color-link);
   border-width: 2px 2px 0 0;
   transition: transform 0.2s;
 }
@@ -52,10 +69,8 @@
 }
 
 .accordion details .accordion-item-body {
-  padding: 0 16px;
-}
-
-.accordion details[open] .accordion-item-body {
-  border-top: 1px solid #dadada;
-  background-color: var(--background-color);
+  padding: 0 8px 16px;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.5;
 }
